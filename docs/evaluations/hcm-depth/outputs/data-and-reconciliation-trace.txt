@@ -1,0 +1,35 @@
+Actor ID: /root/ba_rules_author
+Exercise: data-and-reconciliation
+Mode: reused-actor regression exercise. Earlier shared authoring context was retained; this is not a fresh/blind comparison or independent comparative proof.
+Frozen input root: C:/Users/robso/AppData/Local/Temp/senior-skills-ba-depth-qLuhUW/evaluation-snapshot
+
+Files read during this exercise, relative to the frozen input root:
+1. inputs/data-and-reconciliation.md
+2. skills/feature-context-analysis/SKILL.md
+3. skills/feature-contract-definition/SKILL.md
+4. skills/feature-context-analysis/references/integration-data-readiness.md
+5. skills/feature-context-analysis/references/senior-hcm-context.md
+6. skills/feature-contract-definition/references/integration-reconciliation.md
+7. skills/feature-contract-definition/references/hcm-data-and-interactions.md
+8. skills/feature-contract-definition/references/contract-surfaces.md
+
+Tools actually used:
+- functions.exec orchestrated tools.exec_command calls.
+- tools.exec_command ran PowerShell Get-Content -Raw to read the eight files above. The initial combined reference output was truncated; integration-reconciliation.md and hcm-data-and-interactions.md were then read separately in full. The contract-surfaces.md response was visible; data, external-integration and interacting-surface guidance were applicable. No external links in these references were opened.
+- tools.exec_command ran a Node.js inline program through a single-quoted PowerShell here-string and node --input-type=module. It used only the case's five source rows and the two three-entry sets transcribed as literals. It performed no file reads/writes or network access. It grouped source rows by company/relationship, counted null and out-of-domain values and known mappings, and compared expected K keys/values with observed J keys/values. It explicitly labelled the latter comparison provisional because the cutoffs differ.
+- functions.exec called tools.apply_patch to create only data-and-reconciliation.txt and this trace at the assigned output paths. No skill file or shared artifact was edited during this exercise.
+
+Arithmetic tool output:
+Source rows: 5; distinct scoped keys: 4; duplicate group C/11: rows 2 and 3; excess rows: 1; null row: 2; non-null out-of-domain row: 4; known-mapped rows: 1, 3 and 5.
+Expected K entries: 3; observed J entries: 3; exact supplied pair match: C/10:X; missing key relative to K: C/12; unexpected key relative to K: C/98; different value: C/11 expected Y, observed X.
+
+Limitations:
+- Did not read rubric.md, snapshot.json, evaluation results or other actor outputs. No grading or self-score was produced.
+- Case facts and fictional roles are supplied evidence, not independently verified customer facts. The small sample is deliberately selected and the total source population is unknown.
+- No live environment, source repository, actual provider specification, product documentation, status lookup, integration test or repair was accessed or executed. Missing contracts/capabilities remain unknown.
+- Inline arithmetic confirms only the transcribed sample and set calculations. It does not establish representative sampling, provider execution, comparable time views or production conformance.
+- The same-K conclusion in the analysis is conditional on the supplied final read covering the same complete population and business-effective view.
+
+Output paths:
+C:/git/senior-skills/docs/evaluations/hcm-depth/outputs/data-and-reconciliation.txt
+C:/git/senior-skills/docs/evaluations/hcm-depth/outputs/data-and-reconciliation-trace.txt

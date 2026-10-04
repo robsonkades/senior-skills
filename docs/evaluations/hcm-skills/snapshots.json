@@ -1,0 +1,122 @@
+{
+  "model": "Inherited parent model; no override requested. Exact backend revision not exposed.",
+  "access": "Procedural per-agent path restrictions; shared filesystem tools. Read logs are agent-reported, not an enforced sandbox audit.",
+  "skillSnapshots": {
+    "baseline-skills": {
+      "catalogSha256": "d8bf196fc821848f4e08e9e115139f6160eacbfcc98312dbdc9e83e865450fda",
+      "changedSkills": [
+        {
+          "name": "collaborative-feature-definition",
+          "version": "1.1.6",
+          "integrity": "sha256-AWArmzlLRXYD3BYOFK+Xt4l1QE7DqTCm/JClb+G8wOI="
+        },
+        {
+          "name": "feature-context-analysis",
+          "version": "1.1.6",
+          "integrity": "sha256-b8vi1mBWYIHb4bUjG6wHwI8jhP1nMYSWXIXW8K7+kyM="
+        },
+        {
+          "name": "feature-contract-definition",
+          "version": "1.0.6",
+          "integrity": "sha256-l8lR7p+icUl/7RoOFYswCzYVdrKEFZHf728nY5BHiPY="
+        },
+        {
+          "name": "feature-engineering",
+          "version": "1.1.8",
+          "integrity": "sha256-O1aZv6GU6+NuYLIglb5hxjRHLtf/WJPB1of/5ZY8KUc="
+        },
+        {
+          "name": "feature-readiness-review",
+          "version": "1.2.5",
+          "integrity": "sha256-vIKLCoBmxJ2sRp4/pZ0wld8tCsIe/4gEdI+uIpzdLAs="
+        },
+        {
+          "name": "feature-solution-analysis",
+          "version": "1.1.6",
+          "integrity": "sha256-JuZRU9qLLiCtUWO2tBiePNFWj/LPdRbvnH+rHTisOEo="
+        }
+      ]
+    },
+    "revised-skills": {
+      "catalogSha256": "9ba1aebdb2de4d78ddd87e6cd3ead0e3138e5e528baa88cd98d9dcad5e6519d7",
+      "changedSkills": [
+        {
+          "name": "collaborative-feature-definition",
+          "version": "1.2.0",
+          "integrity": "sha256-OjQw8rIfzfATgm6yELhtw31T5GIp7B+zawjdVp21Ro4="
+        },
+        {
+          "name": "feature-context-analysis",
+          "version": "1.2.0",
+          "integrity": "sha256-iU2QsoG2NZtihoIYmoxN20iDImQXb3nCUo0DWm51aSc="
+        },
+        {
+          "name": "feature-contract-definition",
+          "version": "1.1.0",
+          "integrity": "sha256-KCzvfihaR5yOSUCLgxYQHhoz7UyLhglaRcKrHno7Cd4="
+        },
+        {
+          "name": "feature-engineering",
+          "version": "1.2.0",
+          "integrity": "sha256-5Banr7kGTrNuvccBDnLoAw7FYkrXOHPYS8IYmYOch0Y="
+        },
+        {
+          "name": "feature-readiness-review",
+          "version": "1.3.0",
+          "integrity": "sha256-5Zs11fcmxBRqcAcKjqdg/DJv3xv8P1JohUlq2xjLCj8="
+        },
+        {
+          "name": "feature-solution-analysis",
+          "version": "1.2.0",
+          "integrity": "sha256-m6j+5IIqGY6w/HP4uhDVwYjcka5dSi8aJPw290+boL0="
+        }
+      ]
+    },
+    "rechecked-skills": {
+      "catalogSha256": "24a345d998f0f398313887250aeadbd7df644407906d152b232bf2f40a0d1620",
+      "changedSkills": [
+        {
+          "name": "collaborative-feature-definition",
+          "version": "1.2.0",
+          "integrity": "sha256-8FfOtTgcEVa1MDJ5uFYZDPO7U2IWl4Yl4UjJCcTCjI8="
+        },
+        {
+          "name": "feature-context-analysis",
+          "version": "1.2.0",
+          "integrity": "sha256-iU2QsoG2NZtihoIYmoxN20iDImQXb3nCUo0DWm51aSc="
+        },
+        {
+          "name": "feature-contract-definition",
+          "version": "1.1.0",
+          "integrity": "sha256-KCzvfihaR5yOSUCLgxYQHhoz7UyLhglaRcKrHno7Cd4="
+        },
+        {
+          "name": "feature-engineering",
+          "version": "1.2.0",
+          "integrity": "sha256-5Banr7kGTrNuvccBDnLoAw7FYkrXOHPYS8IYmYOch0Y="
+        },
+        {
+          "name": "feature-readiness-review",
+          "version": "1.3.0",
+          "integrity": "sha256-5Zs11fcmxBRqcAcKjqdg/DJv3xv8P1JohUlq2xjLCj8="
+        },
+        {
+          "name": "feature-solution-analysis",
+          "version": "1.2.0",
+          "integrity": "sha256-m6j+5IIqGY6w/HP4uhDVwYjcka5dSi8aJPw290+boL0="
+        }
+      ]
+    }
+  },
+  "cases": {
+    "discovery": {
+      "sha256": "6f7305a4fdac9029c4fe2a2fe3a8b5cc5055b377d27415c7f66d331974373710"
+    },
+    "solution-readiness": {
+      "sha256": "b9b1a7d2727d1ddb9bfc1dfc145b4b6f224fa8673aecd515ff9d62c429fa4df6"
+    },
+    "context": {
+      "sha256": "93cf61399cfe8af9e59e3399d2c89aef42d211434b0c830d6be8fd8ee392cc47"
+    }
+  }
+}

@@ -1,0 +1,194 @@
+# Failure domains and availability arithmetic
+
+## The two compositions
+
+**Series (a required dependency).** If the request cannot succeed without every component,
+the component success events are independent, and all figures use the same SLI definition
+and window, availabilities multiply:
+
+```
+A_total = A1 × A2 × … × An
+```
+
+Ten dependencies at 99.9% each: `0.999^10 = 0.9900` — 99.0%, about **87 hours a year**
+against the 8.8 hours a single 99.9% component would give. Five at 99.9% is already 99.5%.
+Hours here and below assume time-based availability over a 365-day year. A request-weighted
+failure fraction cannot be converted into elapsed downtime without an explicit traffic model.
+The arithmetic shows why "we are 99.9% because every dependency is 99.9%" is not justified.
+Without independence, request-weighted joint observations, routing and time correlation, the
+product is a design approximation rather than a prediction.
+
+**Parallel (independent redundancy).** If any one instance suffices and their failures are
+independent, the _unavailabilities_ multiply:
+
+```
+q_total = q1 × q2 × … × qn        (q = 1 − A)
+```
+
+Two independent 99% replicas give `0.01 × 0.01 = 1e-4` — 99.99%, assuming routing/failover
+and survivor capacity meet the same success contract. Partial correlation can still permit
+redundancy gains, but this independent product no longer gives their size.
+
+## Correlation destroys the parallel term
+
+One useful explicit model separates a common-cause event from conditional independent
+replica failures (same image, config, certificate, AZ or downstream):
+
+```
+q_total = q_common + (1 - q_common) × q_independent^n
+```
+
+Two replicas at approximately 99.9%, where roughly a tenth of the failure budget is common-mode
+(`q_ind = 0.0009`, `q_common = 0.0001`):
+
+```
+q_total = 0.0001 + 0.9999 × 0.0009^2 ≈ 0.00010081   →  99.9899%
+```
+
+Not 99.9999%. The independent term becomes negligible beside the common cause. Common-cause
+unavailability is a floor: adding replicas eventually buys capacity with almost no
+availability gain. This equation is still a model; estimate its terms from incident and
+request-level data rather than inventing independence.
+
+## Worked example: an order API
+
+| Dependency       | Availability | Required?  |
+| ---------------- | ------------ | ---------- |
+| Auth service     | 99.95%       | yes        |
+| Product database | 99.99%       | yes        |
+| Pricing service  | 99.9%        | yes        |
+| Payment gateway  | 99.9%        | yes, today |
+| Event broker     | 99.95%       | yes, today |
+
+```
+0.9995 × 0.9999 × 0.999 × 0.999 × 0.9995 = 0.9969   →  99.69%,  ~27 hours/year
+```
+
+For an **order-acceptance** contract that permits deferred payment, durable queueing plus
+defined degraded behavior/reconciliation can remove the gateway's 0.999 term. Include any
+new required durable queue/store in the model; here it is assumed to use existing storage:
+
+```
+0.9995 × 0.9999 × 0.999 × 0.9995 = 0.9979   →  99.79%,  ~18 hours/year
+```
+
+This model improves acceptance availability by the equivalent of about nine time-based hours
+per year. It does not improve availability of immediate payment completion by the same amount:
+that is a different success contract. Compare dependency removal, redundancy and reliability
+work against the permitted semantics and backlog/recovery capacity.
+
+Four caveats matter: dependency failures are rarely independent; traffic is not distributed
+uniformly; availability figures may use different windows or success criteria; and a
+historical average is not a probability for next month. Retry and fallback also make path
+availability conditional rather than a simple product. Use arithmetic to expose assumptions
+and compare designs, then validate with request-weighted joint data and failure exercises.
+
+## Do not add unlike SLIs
+
+Before composing numbers, align:
+
+- **unit:** request success, minute availability, durable-write acceptance or control-plane
+  uptime are different events;
+- **population:** a global dependency SLI may hide the one region or tenant your service
+  uses;
+- **window:** monthly and annual averages do not preserve burst correlation or error-budget
+  burn;
+- **load:** an idle failover success rate says little about failover at peak utilization;
+- **degraded success:** decide whether stale reads, queued writes or partial responses satisfy
+  the user contract.
+
+For measured events `S_i`, the exact path availability is
+`P(S_1 ∩ ... ∩ S_n)`. The product `∏P(S_i)` is valid only when those events are independent.
+When possible, calculate the joint request outcome directly from traces or correlated SLI
+time series. Never average percentages without the matching denominator.
+
+### What can be concluded without independence
+
+First distinguish an observed/assumed availability `A_i` from an SLA or SLO threshold. A promise
+of at least 99.9% is not evidence that availability equals 99.9%, nor that it cannot exceed it.
+Historical probabilities also do not promise the same future workload or failure distribution.
+
+For aligned probabilities of required component-success events, arbitrary dependence still allows:
+
+```text
+max(0, 1 - sum(1 - A_i)) <= P(all required components succeed) <= min(A_i)
+```
+
+The lower bound follows because the probability of any component failure is at most the sum
+of the failure probabilities; the upper bound follows because success requires each component.
+These are probability bounds, not statistical confidence intervals. See the
+[probability union and intersection bounds](https://www.stat.berkeley.edu/pub/users/stark/SticiGui/Text/probabilityAxioms.htm).
+
+For two required components each measured at 99.9% on the same population/window, the joint
+success fraction is between 99.8% and 99.9%. Perfectly overlapping failures yield the upper end;
+disjoint failures yield the lower end. A 99.95% joint target is outside that modeled interval;
+99.85% requires overlap/joint evidence to assess. Do not substitute the independence product
+as an observed result. A changed contract, such as an accepted fallback that removes a required
+component, changes the event being modeled and therefore the bound.
+
+The interval covers only the modeled component-success event. Omitted application failures,
+routing errors or insufficient survivor capacity can lower actual path availability. Missing
+population/window alignment prevents even this calculation; report that gap instead of forcing
+unlike percentages into either a product or a bound.
+
+## Enumerating domains
+
+Name the fault as well as the domain. The table models complete domain loss or a defect
+affecting every participant exposed to it; partial outages can affect a subset. Shared host
+risk does not erase protection against independent process crashes. Check actual placement,
+required paths and rollout exposure before assigning a blast radius.
+
+| Domain                   | Takes down                                                 | Typical control                                     |
+| ------------------------ | ---------------------------------------------------------- | --------------------------------------------------- |
+| Process                  | one replica                                                | more replicas                                       |
+| Host / node              | every replica scheduled there                              | anti-affinity across nodes                          |
+| Rack / failure zone      | every node in it                                           | spread across zones                                 |
+| Availability zone        | everything in the AZ, including that AZ's managed services | multi-AZ, and a quorum that survives losing one     |
+| Region                   | resources and operations relying on that region            | a second region, with the data problem that implies |
+| Dependency               | operations requiring it without a working fallback         | fallback, or removal from the required path         |
+| Deploy / artefact        | every replica running it                                   | staged rollout, canary, fast rollback               |
+| Config / feature flag    | every replica reading it                                   | staged config rollout — the same discipline as code |
+| Certificate / credential | everything that presents it                                | staggered expiries, automated renewal               |
+
+Deploy and config can expose every replica to the same defect. Staged rollout and version
+diversity can limit simultaneous exposure; model the actual rollout rather than assuming
+that replicas either all fail together or are independent.
+
+## Questions that expose a hidden shared dependency
+
+Ask these of a topology that claims independence. Each has produced a real correlated
+outage:
+
+- Do the replicas run on the same node, the same node group, or nodes created from the same
+  image at the same time?
+- Do they resolve the same hostname, and is the resolver itself redundant? DNS and service
+  discovery may be needed for connection establishment or refresh while existing connections
+  or cached results continue working; model that temporal dependency explicitly.
+- Do they share a database, a cache, a secret store, or a single connection-pool target?
+  A read replica that fails over to the same primary is one database.
+- Do they share a control plane — the scheduler, the load balancer, the API gateway, the
+  service mesh control plane? Check the deployed implementation's cached configuration,
+  bootstrap, certificate renewal and failover dependencies separately: existing traffic and
+  new participants may have different failure conditions.
+- Do they share an authentication provider, and does that provider have its own dependency
+  chain you have never drawn?
+- Do they use the same client library, with the same default timeout and the same bug?
+- Does an incident in the observability stack blind you to all of them at once?
+- Do they share a certificate, a signing key, or a licence with a single expiry date?
+- Does the retry policy make every replica hammer the same slow dependency at the same
+  moment? That is a correlated failure the system creates for itself; trace how it propagates
+  across the affected participants.
+
+## The check to run
+
+Before accepting a redundancy claim, investigate plausible events that could take down the
+set, including deploys, configuration and credentials. Record evidenced common causes and
+unresolved assumptions. If none is established, report the investigation's limits instead of
+inventing one or claiming independence is proved. Missing joint data leaves the arithmetic
+conditional; select further measurement or a fault exercise only if it could change the decision.
+
+## Primary references
+
+- [Google SRE Workbook: Implementing SLOs](https://sre.google/workbook/implementing-slos/)
+- [NIST SP 800-160 Vol. 2 Rev. 1: cyber-resilient systems](https://csrc.nist.gov/pubs/sp/800/160/v2/r1/final)
+- [Gray Failure: The Achilles' Heel of Cloud-Scale Systems](https://www.microsoft.com/en-us/research/publication/gray-failure-achilles-heel-cloud-scale-systems/)

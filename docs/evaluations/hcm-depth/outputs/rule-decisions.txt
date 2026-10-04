@@ -1,0 +1,72 @@
+# Company V learning allowance — functional draft BD-r0
+
+Status: In discovery; not accepted or ready for implementation. Accountable business owner: the supplied HR policy owner. Source: synthetic task `inputs/rule-decisions.md`, policy R4 effective 2026-10-01. This draft records fictional business policy, not legal eligibility. No policy precedence has been accepted through this draft.
+
+**OBJ-01:** Let HR determine learning-allowance eligibility separately for each employment relationship on the relevant business date, with the applicable rule and unresolved evidence visible. The current statements leave the exception/leave overlap and missing leave data unresolved. The intended improvement is consistent decisions; no reduction in errors or effort has been measured.
+
+**Scope SC-01:** Eligibility definition, representative cases and draft business acceptance. Provider activation, transmission and historical correction behavior remain distinct questions for later analysis. Engineering analysis is required for the intended integration; its distinct owner is not yet identified and its work is not complete. The external-integration uncertainty warrants Deep analysis over the lifecycle, while this deliverable remains a compact business draft.
+
+Known rules and authority:
+
+- **BR-01:** Assess each relationship separately, even when one person has two. Source: HR's confirmation in the input.
+- **BR-02:** An active relationship's ordinary eligibility interval includes its start date and excludes its end date. Source: R4 statement 1.
+- **BR-03:** Unpaid leave excludes eligibility during the leave interval. Source: R4 statement 2. Exact leave-interval endpoints were not supplied.
+- **BR-04:** A recorded manager exception can permit eligibility for a specified interval. Source: the same policy owner's statement. Its precedence over unpaid leave and its full override scope remain open; exact exception-interval endpoints were not supplied.
+- **BR-05:** No default for unknown leave status has been accepted. Source: explicit task fact; missing information is not evidence of no leave or of ineligibility.
+- **BR-06:** R4 is effective from 2026-10-01. Receipt time and payroll closing date have not been established as the policy-effective date. Preserve the business date being assessed separately from receipt.
+
+## Compact decision table
+
+Decision: eligibility of one identified relationship on business date D, for dates covered by R4. The policy owner is accountable for all rows. “Within ordinary window” means active and start <= D < end. A known effective exception means a recorded exception for this relationship that is clearly in effect at D; its boundary dates remain subject to Q-03. “OPEN” below is the status of this analysis, not an approved runtime hold, rejection or manual workflow.
+
+| Row | Conditions at D | Outcome supported now | Rule/precedence and status |
+| --- | --- | --- | --- |
+| 1 | Within ordinary window; unpaid leave confirmed No; exception Yes, No or Unknown | Eligible | BR-02; an exception that can only permit eligibility does not change this already eligible outcome. Supported by supplied policy. |
+| 2 | Within ordinary window; unpaid leave confirmed Yes; effective exception confirmed No | Not eligible during leave | BR-03 is the stated exclusion from ordinary eligibility. Supported, except exact leave-boundary membership needs Q-03. |
+| 3 | Within ordinary window; unpaid leave Yes; effective exception Yes | OPEN: eligible or not eligible | BR-03 and BR-04 compete. Their priority is not established; Q-01. |
+| 4 | Within ordinary window; unpaid leave Yes; exception status Unknown | OPEN | Establish the exception fact. If No, row 2; if Yes, row 3. Unknown cannot become No. |
+| 5 | Within ordinary window; unpaid leave Unknown; exception Yes, No or Unknown | OPEN | BR-05; leave may change the outcome, and BR-04 does not establish an unconditional override. Q-02. |
+| 6 | Before start or on/after end; exception confirmed No | Not eligible under the ordinary rule | BR-02 establishes the ordinary interval; no exception applies in this row. |
+| 7 | Before start or on/after end; exception Yes or Unknown | OPEN if encountered | BR-04 does not establish whether it may override the ordinary interval. Preserve this uncovered combination; do not infer permission or an absolute prohibition. |
+
+Rows are conditions, not an ordered algorithm. The three supplied records belong to the ordinary-window group, so row 7 does not require an additional question in this first discussion. A date before 2026-10-01 needs the applicable earlier policy; R4 does not establish that outcome.
+
+Choosing the easiest precedence would decide who receives the allowance. That is an HR policy decision. For row 3, an exception-first rule permits the allowance during the overlap; a leave-first rule withholds it throughout unpaid leave despite the exception. The supplied evidence does not favor either entitlement outcome. Record the policy owner's choice with its scope and revision; implementation convenience cannot supply it.
+
+## Cases for review and draft acceptance trace
+
+All dates and relationship labels below are synthetic case data. These are planned reviews, not executed acceptance tests.
+
+| Case | Input and expected reasoning | Draft trace |
+| --- | --- | --- |
+| Ordinary start/end | Active relationship R1 has start 2026-10-01 and end 2026-10-10, known no unpaid leave and no exception. Eligible on October 1 and 9; not eligible on October 10. | BR-02 -> BAC-01 -> SC-01 |
+| Before start | Same ordinary conditions, but R1 starts October 5. October 4 is outside ordinary eligibility; October 5 is included. | BR-02 -> BAC-01 |
+| Two relationships | Person P1 has R1 and R2 within their ordinary windows. R1 has no unpaid leave; R2 is clearly inside an unpaid-leave interval; neither has an exception. R1 is eligible and R2 is not. Preserve both outcomes. | BR-01/02/03 -> BAC-02 |
+| Supplied overlap | Active relationship, unpaid leave and a recorded manager exception all in effect on the same day: row 3 remains OPEN until Q-01. | BR-03/04 -> BAC-03, expected result pending |
+| Supplied missing fact | Active relationship with unknown leave status: row 5 remains OPEN. Do not label it automatically eligible or ineligible. | BR-05 -> BAC-04, business disposition pending Q-02 |
+| Late receipt | The supplied record received October 3 describes active employment on October 1. Assess the October 1 business state under R4; retain October 3 as receipt. The input does not establish leave status, so active employment alone does not establish its final eligibility. If no unpaid leave is confirmed, row 1 applies. | BR-02/05/06 -> BAC-05 |
+| Leave and exception edges | Compare the day before, the first boundary date, the last boundary date and the following day for each interval. Start/end inclusion for leave and exceptions is OPEN under Q-03. Re-evaluate the overlap when an exception ends while leave continues; do not copy employment's endpoint convention without authority. | BR-03/04 -> BAC-03, boundary expectations pending |
+
+Draft criteria and verification:
+
+- **BAC-01:** For active relationships with no unpaid leave and no exception, eligibility includes the supplied start date and excludes the end date. Verify by HR owner review of the start/end and before-start cases; later implementation evidence remains pending.
+- **BAC-02:** When one person's two relationships meet different decided conditions, the assessed results retain the correct relationship and its distinct outcome. Verify using the two-relationship case; a single person-level result is insufficient.
+- **BAC-03:** The unpaid-leave/exception overlap and its boundary dates produce the outcome selected by the policy owner for the applicable interval. The exact assertion is OPEN until Q-01 and Q-03 are resolved; it cannot currently be marked test-ready or passed.
+- **BAC-04:** The business treatment of unresolved leave evidence follows the policy owner's recorded decision. The expected business behavior is OPEN under Q-02. The present draft preserves the uncertainty; that analytical status does not prescribe runtime behavior.
+- **BAC-05:** When assessing the supplied October 1 state, receiving it on October 3 does not silently substitute receipt or payroll close for that business date. Verify the late-receipt case with the HR owner. Whether a later correction changes a previously delivered allowance remains a separate unresolved business question if such an effect exists.
+
+## Next discussion: three material questions
+
+1. **Q-01 — HR policy owner:** For an active relationship that is on unpaid leave and has a recorded exception valid for the same date, does the exception permit eligibility or does the leave exclusion prevail? This determines row 3 and BAC-03. Record any limits on the chosen override; do not generalize it to other exclusions.
+2. **Q-02 — HR policy owner, with the responsible HR source-data role:** What business treatment is authorized when leave status for D cannot be established? Requiring the missing fact before an eligibility decision and authorizing a defined provisional outcome have different consequences. The source-data owner must identify/correct the factual evidence; no missing-data default or operational hold is assumed here. This determines row 5 and BAC-04.
+3. **Q-03 — HR policy owner:** Which start/end boundaries apply to unpaid-leave intervals and manager-exception intervals? In particular, are their start dates included and end dates excluded, or does either interval use another convention? This determines first/last-day results and the exception-expiry overlap; employment's interval is already known and need not be reconfirmed.
+
+These questions block only the dependent policy outcomes and their final acceptance criteria. Existing confirmed facts, row 1, the ordinary interval and relationship independence remain usable.
+
+## Independent investigation and checkpoint
+
+An identified engineering/product specialist can separately gather the actual product/module/version, applicable provider documentation and ownership, and evidence of how relationship identity, dated history, leave and exception facts are represented. They can investigate whether the provider supports relevant effective-dated behavior, reporting of completion and historical correction. These are capability questions to verify, not guarantees or a contract authored by this draft. No access to a live environment, new endpoint or provider message is required to complete this discovery document.
+
+Keep eligibility, transmission and actual allowance activation separate. If a prior effect needs changing, obtain its business correction rule before prescribing reversal or replay. Provider limitations must return to the appropriate owner; they cannot silently choose policy precedence.
+
+**Checkpoint: Continue** with Q-01 to Q-03 and targeted evidence gathering. The draft does not close the business-definition stage. No accepted gaps, approval, implementation, provider conformance or independent readiness review is claimed. Once the owner answers, revise BD-r0, record the decision source, update only affected table rows and criteria, and preserve unanswered combinations.

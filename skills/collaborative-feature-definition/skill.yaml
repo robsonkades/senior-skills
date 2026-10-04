@@ -1,0 +1,72 @@
+schemaVersion: 1
+
+name: collaborative-feature-definition
+version: 1.1.0
+description: >-
+  Co-author Product Features and Tech Features through focused question-and-revision rounds.
+  Use when an idea needs an agreed brief or an evidenced decision not to proceed, including
+  customer integration checklists, provider workshops and HR/personnel business-rule discovery for Senior HCM. Separate the
+  business definition from engineering-owned feasibility, decisions and contracts. Produce
+  reviewable definitions, not implementation; accepted features go to feature-engineering
+  for validation and execution planning.
+
+license: Apache-2.0
+
+authors:
+  - name: senior-skills contributors
+    url: https://github.com/robsonkades/senior-skills
+
+homepage: https://github.com/robsonkades/senior-skills/tree/main/skills/collaborative-feature-definition
+repository:
+  type: git
+  url: https://github.com/robsonkades/senior-skills
+  directory: skills/collaborative-feature-definition
+
+keywords:
+  - feature
+  - product
+  - tech-feature
+  - discovery
+  - collaboration
+  - requirements
+  - acceptance-criteria
+  - hcm
+  - business-analysis
+
+files:
+  - SKILL.md
+  - skill.yaml
+  - references/
+
+dependencies:
+  - name: architecture-decision-making
+    version: ^1.0.0
+  - name: feature-engineering
+    version: ^1.0.0
+  - name: feature-context-analysis
+    version: ^1.0.0
+  - name: feature-contract-definition
+    version: ^1.0.0
+  - name: feature-decomposition
+    version: ^1.0.0
+  - name: feature-discovery
+    version: ^1.0.0
+  - name: feature-feasibility-experiment
+    version: ^1.0.0
+  - name: feature-requirement-clarification
+    version: ^1.0.0
+  - name: requirements-and-acceptance
+    version: ^1.1.0
+
+suggests: []
+
+capabilities:
+  - reads-source
+
+agentOverrides:
+  codex:
+    interface:
+      display_name: Collaborative Feature Definition
+      short_description: Co-author Product and Tech Features through focused rounds
+      default_prompt: Use $collaborative-feature-definition to turn this idea into an
+        agreed feature.

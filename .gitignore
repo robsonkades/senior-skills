@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.tsbuildinfo
+**/target/
+*.class
+.DS_Store
+coverage/
+.tmp/
+*.log
+.env
+.codex

@@ -1,0 +1,53 @@
+{
+  "name": "@senior-skills/cli",
+  "version": "1.0.0",
+  "description": "Install, update and publish AI coding-agent skills across Claude Code, Codex and future agents",
+  "keywords": [
+    "senior-skills",
+    "claude-code",
+    "codex",
+    "ai",
+    "skills",
+    "package-manager",
+    "cli"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robsonkades/senior-skills.git",
+    "directory": "packages/cli"
+  },
+  "type": "module",
+  "bin": {
+    "senior-skills": "bin/senior-skills.mjs"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@senior-skills/adapter-claude": "1.0.0",
+    "@senior-skills/adapter-codex": "1.0.0",
+    "@senior-skills/core": "1.0.0",
+    "@senior-skills/installer": "1.0.0",
+    "@senior-skills/node": "1.0.0",
+    "@senior-skills/registry": "1.0.0",
+    "commander": "^15.0.0",
+    "picocolors": "^1.1.1"
+  }
+}

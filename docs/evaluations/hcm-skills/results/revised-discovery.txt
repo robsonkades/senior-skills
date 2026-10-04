@@ -1,0 +1,28 @@
+**Preparar e liberar acessos no Predial conforme vínculos e vigência**
+
+Product Feature, revisão inicial PF-01/r0, 03/10/2026. **Em descoberta; não aprovada.** Profundidade Deep: integração externa e consequência sobre acesso físico. Autoria: apoio ao analista de negócios. Fonte exclusiva: ata fornecida; comportamentos dos sistemas não verificados.
+
+**OBJ-01 — Resultado proposto:** permitir ao RH preparar o acesso antecipadamente, liberá-lo na data autorizada e preservar acessos ainda justificados por outro vínculo.
+
+**Fatos e autoridade.** F-01: a ata relata RH cadastrando admissões no HCM e enviando planilha à equipe Predial. F-02: segundo Lia, uma pessoa pode ter dois vínculos simultâneos em unidades diferentes; a ata informa controle por pessoa no Predial. F-03: Lia pode validar suas regras de acesso. Isso não estabelece sua autoridade sobre interfaces, prazo do patrocinador ou toda a definição. Não houve decisão tecnológica.
+
+**Valor a investigar.** A-01: reduzir intervenção manual pode beneficiar RH e equipe Predial; hipótese baseada na planilha, refutada se a mudança não melhorar o processo. Comparar intervenções e ocorrências de acesso atrasado/indevido em admissões representativas. Baseline, meta, período e responsável pela avaliação: OPEN. Nenhum ganho foi medido.
+
+**Processo e escopo SC-01.** Atual: cadastro pelo RH → planilha → atuação da equipe Predial; confirmação final desconhecida. Desejado: fato autorizado no HCM → preparação sem liberação → efeito na vigência → confirmação ao responsável. Gatilho, responsável pela autorização, confirmação e população inicial permanecem OPEN. Recorte proposto: admissões e preservação do acesso justificado por vínculos simultâneos. Esta atividade termina na definição; execução e implementação estão excluídas pelo pedido.
+
+**Regras relatadas e critérios propostos**, sujeitos à validação de Lia:
+
+- BR-01: pessoa e vínculo não são equivalentes; encerrar um vínculo não elimina acesso justificado pelo outro. BAC-01: pessoa P tem vínculos A e B em unidades distintas; encerrado A, o acesso justificado por B permanece. Verificação planejada: revisão do cenário sanitizado com Lia e posterior demonstração no destino.
+- BR-02: preparação antecipada não autoriza liberação antecipada. BAC-02: admissão futura preparada permanece sem acesso antes da data autorizada. BAC-03: na vigência autorizada, a pessoa obtém o acesso correspondente. Verificação planejada: revisar a linha do tempo com Lia e posteriormente observar antes/no início; horário e precisão temporal: OPEN.
+
+Rastreabilidade: OBJ-01/SC-01 → BR-01/BAC-01 e BR-02/BAC-02–03. Prazo e confirmação ainda não têm critério verificável.
+
+**Pendências de alto impacto.** U-01: elegibilidade por unidade, cancelamento/alteração da admissão e vigências retroativas; Lia no seu domínio, demais responsáveis OPEN. U-02: identidade ambígua, repetição, falha parcial, indisponibilidade e responsável por corrigir divergências; podem deixar acesso indevido ou retirar acesso válido. U-03: geração/módulo/versão HCM, capacidades, identificação e contraparte técnica Predial; bloqueiam compromissos técnicos. “API de tudo” e CPF são alegações sem evidência, não premissas adotadas.
+
+**Próxima reunião: resultado e expectativa.**
+
+1. Q-01 — Qual ocorrência concreta mostra que a planilha não atende ao RH? Decide a justificativa: processo adequado permite considerar ajuste operacional; falha demonstrada orienta a mudança.
+2. Q-02 — Que confirmação o patrocinador espera para considerar a atualização concluída? Recebimento e efeito no acesso exigem aceites diferentes.
+3. Q-03 — Qual prazo máximo, com início e fim da contagem, substitui “na hora”? Permite definir o aceite temporal sem confundir preparação com liberação.
+
+**Encaminhamento:** continuar a descoberta; questões bloqueiam o fechamento, não este rascunho. Análise de engenharia necessária, não iniciada, com arquiteto/engenheiro distinto ainda não identificado. Revisão documental apenas; critérios não executados, validação independente não realizada, nenhuma lacuna aceita. Próxima revisão incorporará respostas e atualizará regras/critérios afetados.

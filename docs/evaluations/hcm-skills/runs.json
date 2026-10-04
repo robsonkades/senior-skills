@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-03",
+  "note": "Raw answer bytes preserved as .txt. Read logs are self-reported; temporary root paths normalized.",
+  "runs": [
+    {
+      "id": "baseline-discovery",
+      "case": "discovery",
+      "snapshot": "baseline-skills",
+      "result": "results/baseline-discovery.txt",
+      "answerSha256": "fb930bfda07615799cae017695273a8653b5704e8fb28d297c7d34968b1c958f",
+      "wordsByWhitespace": 585,
+      "wordLimit": 600,
+      "readLog": "Caminhos efetivamente lidos (leituras repetidas consolidadas):\n<evidence-root>/cases/discovery.md\n<evidence-root>/baseline-skills/collaborative-feature-definition/SKILL.md\n<evidence-root>/baseline-skills/collaborative-feature-definition/references/product-feature.md\n<evidence-root>/baseline-skills/feature-discovery/SKILL.md\n<evidence-root>/baseline-skills/feature-discovery/references/ledger-format.md\n<evidence-root>/baseline-skills/feature-requirement-clarification/SKILL.md\n<evidence-root>/baseline-skills/feature-requirement-clarification/references/impact-and-blocking.md\n<evidence-root>/baseline-skills/feature-requirement-clarification/references/question-rounds.md\n<evidence-root>/baseline-skills/requirements-and-acceptance/SKILL.md\n<evidence-root>/baseline-skills/requirements-and-acceptance/references/acceptance-criteria.md\n<evidence-root>/baseline-skills/requirements-and-acceptance/references/ambiguity-checklist.md\n<evidence-root>/baseline-skills/feature-engineering/SKILL.md\n<evidence-root>/baseline-skills/feature-engineering/references/artefact-contract.md\n\nFerramentas usadas:\n- functions.exec\n- exec_command (via tools.exec_command em functions.exec; somente Get-Content dos caminhos acima)\n- apply_patch (via tools.apply_patch em functions.exec; gravação de answer.md e deste registro)\n\nNenhuma leitura do repositório, de outros snapshots, resultados ou rubricas. Nenhuma consulta de rede.\n\n"
+    },
+    {
+      "id": "revised-discovery",
+      "case": "discovery",
+      "snapshot": "revised-skills",
+      "result": "results/revised-discovery.txt",
+      "answerSha256": "c7895ebf5493df63dff2555b4134ea3965d5729734cb6e4351f1e8c60c330d0f",
+      "wordsByWhitespace": 556,
+      "wordLimit": 600,
+      "readLog": "Arquivos efetivamente lidos:\n<evidence-root>/cases/discovery.md\n<evidence-root>/revised-skills/collaborative-feature-definition/SKILL.md\n<evidence-root>/revised-skills/collaborative-feature-definition/references/hcm-business-discovery.md\n<evidence-root>/revised-skills/collaborative-feature-definition/references/product-feature.md\n<evidence-root>/revised-skills/feature-discovery/SKILL.md (duas leituras; a segunda recuperou saída truncada)\n<evidence-root>/revised-skills/feature-discovery/references/ledger-format.md\n<evidence-root>/revised-skills/feature-requirement-clarification/SKILL.md\n<evidence-root>/revised-skills/feature-requirement-clarification/references/impact-and-blocking.md\n<evidence-root>/revised-skills/feature-requirement-clarification/references/question-rounds.md\n<evidence-root>/revised-skills/requirements-and-acceptance/SKILL.md\n<evidence-root>/revised-skills/requirements-and-acceptance/references/acceptance-criteria.md\n\nFerramentas usadas:\nfunctions.exec\nexec_command (via tools.exec_command; Get-Content, somente nos arquivos acima)\napply_patch (via tools.apply_patch; somente answer.md e reads.txt autorizados)\n\nSem rede, sistemas externos ou leitura do repositório.\n"
+    },
+    {
+      "id": "baseline-solution",
+      "case": "solution-readiness",
+      "snapshot": "baseline-skills",
+      "result": "results/baseline-solution.txt",
+      "answerSha256": "2f89c2cf0f9e8d68bddeb430f2358c137461cd678d83ea24931f7f956a5f9b6e",
+      "wordsByWhitespace": 851,
+      "wordLimit": 900,
+      "readLog": "Caminhos efetivamente lidos:\n<evidence-root>/cases/solution-readiness.md\n<evidence-root>/baseline-skills/feature-engineering/SKILL.md\n<evidence-root>/baseline-skills/feature-engineering/references/artefact-contract.md\n<evidence-root>/baseline-skills/feature-engineering/references/depth-and-phases.md\n<evidence-root>/baseline-skills/feature-engineering/references/dossier-layout.md\n<evidence-root>/baseline-skills/feature-solution-analysis/SKILL.md (duas leituras; a primeira saída foi truncada)\n<evidence-root>/baseline-skills/feature-contract-definition/SKILL.md\n<evidence-root>/baseline-skills/feature-readiness-review/SKILL.md\n<evidence-root>/baseline-skills/feature-contract-definition/references/contract-surfaces.md\n<evidence-root>/baseline-skills/feature-readiness-review/references/readiness-checklist.md\n<evidence-root>/baseline-skills/feature-solution-analysis/references/evaluation-axes.md\n<evidence-root>/baseline-skills/feature-feasibility-experiment/SKILL.md\n<evidence-root>/baseline-skills/feature-feasibility-experiment/references/experiment-record.md\n\nFerramentas usadas:\nfunctions.exec\ntools.exec_command (Get-Content)\ntools.apply_patch\n\nEscopo de execução:\nSomente leitura do caso e dos recursos listados do snapshot baseline-skills.\nSem consulta ao repositório, a outros snapshots, resultados, rubricas, sistemas ou rede.\nSem ensaios de integração executados.\nContagem do texto da resposta em memória: 851 palavras (separação por espaços).\n"
+    },
+    {
+      "id": "revised-solution",
+      "case": "solution-readiness",
+      "snapshot": "revised-skills",
+      "result": "results/revised-solution.txt",
+      "answerSha256": "dca4960ab29ef9f36f274b929f90c18ee7d5626b7f062544ee95d5422aee129f",
+      "wordsByWhitespace": 847,
+      "wordLimit": 900,
+      "readLog": "Caminhos efetivamente lidos (lista sem duplicatas):\n<evidence-root>/cases/solution-readiness.md\n<evidence-root>/revised-skills/feature-engineering/SKILL.md\n<evidence-root>/revised-skills/feature-engineering/references/hcm-analysis-route.md\n<evidence-root>/revised-skills/feature-engineering/references/artefact-contract.md\n<evidence-root>/revised-skills/feature-engineering/references/depth-and-phases.md\n<evidence-root>/revised-skills/feature-engineering/references/dossier-layout.md\n<evidence-root>/revised-skills/feature-solution-analysis/SKILL.md\n<evidence-root>/revised-skills/feature-contract-definition/SKILL.md\n<evidence-root>/revised-skills/feature-readiness-review/SKILL.md\n<evidence-root>/revised-skills/feature-feasibility-experiment/SKILL.md\n<evidence-root>/revised-skills/feature-solution-analysis/references/hcm-integration-options.md\n<evidence-root>/revised-skills/feature-solution-analysis/references/evaluation-axes.md\n<evidence-root>/revised-skills/feature-contract-definition/references/hcm-data-and-interactions.md\n<evidence-root>/revised-skills/feature-contract-definition/references/contract-surfaces.md\n<evidence-root>/revised-skills/feature-readiness-review/references/hcm-readiness.md\n<evidence-root>/revised-skills/feature-readiness-review/references/readiness-checklist.md\n<evidence-root>/revised-skills/feature-feasibility-experiment/references/experiment-record.md\n\nAs referências hcm-data-and-interactions.md, contract-surfaces.md e hcm-readiness.md foram relidas após truncamento da saída agrupada.\n\nFerramentas usadas:\nfunctions.exec\nexec_command (tools.exec_command; somente Get-Content dos caminhos acima)\napply_patch (tools.apply_patch; somente answer.md e reads.txt autorizados)\n\nSem rede, ferramentas externas, leitura de repositório ou consulta a outros snapshots/resultados/rubricas.\n"
+    },
+    {
+      "id": "rechecked-discovery",
+      "case": "discovery",
+      "snapshot": "rechecked-skills",
+      "result": "results/rechecked-discovery.txt",
+      "answerSha256": "267e06132f73d31c562bced38e4685245c0d2a32210e74f0cbdd8cffc598e708",
+      "wordsByWhitespace": 571,
+      "wordLimit": 600,
+      "readLog": "Caminhos efetivamente lidos (quantidade de leituras):\n1 | <evidence-root>/cases/discovery.md\n1 | <evidence-root>/rechecked-skills/collaborative-feature-definition/SKILL.md\n1 | <evidence-root>/rechecked-skills/collaborative-feature-definition/references/hcm-business-discovery.md\n1 | <evidence-root>/rechecked-skills/collaborative-feature-definition/references/product-feature.md\n2 | <evidence-root>/rechecked-skills/feature-discovery/SKILL.md\n2 | <evidence-root>/rechecked-skills/feature-requirement-clarification/SKILL.md\n2 | <evidence-root>/rechecked-skills/requirements-and-acceptance/SKILL.md\n1 | <evidence-root>/rechecked-skills/feature-engineering/SKILL.md\n1 | <evidence-root>/rechecked-skills/feature-engineering/references/artefact-contract.md\n1 | <evidence-root>/rechecked-skills/feature-discovery/references/ledger-format.md\n1 | <evidence-root>/rechecked-skills/feature-requirement-clarification/references/impact-and-blocking.md\n1 | <evidence-root>/rechecked-skills/feature-requirement-clarification/references/question-rounds.md\n1 | <evidence-root>/rechecked-skills/requirements-and-acceptance/references/acceptance-criteria.md\n1 | <evidence-root>/rechecked-skills/requirements-and-acceptance/references/ambiguity-checklist.md\n\nFerramentas usadas:\n- functions.exec (orquestração de leituras, contagem de palavras em memória e escrita)\n- exec_command (Get-Content dos caminhos acima)\n- apply_patch (criação de answer.md e reads.txt)\n\nTrês SKILL.md de apoio foram relidos após truncamento da saída agregada.\nfeature-engineering foi consultada apenas para o namespace de artefatos; nenhuma validação de prontidão foi executada.\nNenhuma leitura do repositório, de outros casos, de resultados ou de rubricas. Nenhuma consulta à rede.\n"
+    },
+    {
+      "id": "revised-context",
+      "case": "context",
+      "snapshot": "rechecked-skills",
+      "result": "results/revised-context.txt",
+      "answerSha256": "4b17ba848b3d22e3c43e964218b3932ddec49bcff6bb27e14da9b78d6d5971fd",
+      "wordsByWhitespace": 465,
+      "wordLimit": 500,
+      "readLog": "Caminhos efetivamente lidos:\n<evidence-root>/rechecked-skills/feature-context-analysis/SKILL.md\n<evidence-root>/cases/context.md\n<evidence-root>/rechecked-skills/feature-context-analysis/references/senior-hcm-context.md\n\nFerramentas usadas:\nfunctions.exec\ntools.exec_command (Get-Content -Raw -LiteralPath)\ntools.apply_patch\n\nLimites:\nSomente os três arquivos acima foram lidos. Sem rede ou acesso a sistemas. Escritas restritas a revised-context/answer.md e revised-context/reads.txt.\n"
+    }
+  ]
+}

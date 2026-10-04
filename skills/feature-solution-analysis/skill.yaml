@@ -1,0 +1,57 @@
+schemaVersion: 1
+
+name: feature-solution-analysis
+version: 1.1.0
+description: >-
+  Compare complete options for a feature-level choice, including the simplest feasible approach,
+  and recommend one with evidence, costs and conditions that would change the choice. Use when
+  a mechanism is assumed without alternatives, or when a Senior HCM need may be met by product
+  configuration, an existing integration or development, or when integration estimates need
+  scoped inputs and comparable owner-supplied responses. Does not own the comparison method
+  (architecture-trade-off-analysis), accept or record the decision (feature-decision-analysis
+  and architecture-decision-making), or implement the selected solution.
+license: Apache-2.0
+
+authors:
+  - name: senior-skills contributors
+    url: https://github.com/robsonkades/senior-skills
+
+homepage: https://github.com/robsonkades/senior-skills/tree/main/skills/feature-solution-analysis
+repository:
+  type: git
+  url: https://github.com/robsonkades/senior-skills
+  directory: skills/feature-solution-analysis
+
+keywords:
+  - feature
+  - options
+  - trade-offs
+  - design
+  - recommendation
+  - hcm
+  - integration
+
+files:
+  - SKILL.md
+  - skill.yaml
+  - references/
+
+dependencies:
+  - name: architecture-decision-making
+    version: ^1.0.0
+  - name: architecture-trade-off-analysis
+    version: ^1.0.0
+
+suggests:
+  - feature-context-analysis
+  - feature-decision-analysis
+  - feature-engineering
+  - feature-feasibility-experiment
+
+agentOverrides:
+  codex:
+    interface:
+      display_name: Feature Solution Analysis
+      short_description: Price the options, including the simplest one
+      default_prompt: Use Feature Solution Analysis to generate and evaluate the
+        options for this choice.

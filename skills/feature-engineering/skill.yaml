@@ -1,0 +1,98 @@
+schemaVersion: 1
+
+name: feature-engineering
+version: 1.1.0
+description: >-
+  Coordinate a Product Feature or Tech Feature from definition intake to its authorized endpoint,
+  with proportionate depth, iterative analysis, readiness gates and resumable evidence. Use when
+  preparing, resuming or validating feature work, including the Senior HCM integration journey
+  from an agreed business definition to development readiness and later acceptance testing. Does not
+  co-author the initial brief (collaborative-feature-definition), own specialist phases in depth,
+  orchestrate an arbitrary change (clean-delivery-workflow), or define ADR format
+  (architecture-decision-making).
+license: Apache-2.0
+
+authors:
+  - name: senior-skills contributors
+    url: https://github.com/robsonkades/senior-skills
+
+homepage: https://github.com/robsonkades/senior-skills/tree/main/skills/feature-engineering
+repository:
+  type: git
+  url: https://github.com/robsonkades/senior-skills
+  directory: skills/feature-engineering
+
+keywords:
+  - feature
+  - lifecycle
+  - orchestration
+  - process
+  - delivery
+  - routing
+  - hcm
+  - business-analysis
+
+files:
+  - SKILL.md
+  - skill.yaml
+  - references/
+
+dependencies:
+  - name: architecture-decision-making
+    version: ^1.0.0
+  - name: clean-delivery-workflow
+    version: ^1.0.0
+  - name: code-review
+    version: ^1.0.0
+  - name: coding-agent-discipline
+    version: ^1.0.0
+  - name: debugging
+    version: ^1.0.0
+  - name: feature-architecture-analysis
+    version: ^1.0.0
+  - name: feature-context-analysis
+    version: ^1.1.0
+  - name: feature-contract-definition
+    version: ^1.1.0
+  - name: feature-decision-analysis
+    version: ^1.0.0
+  - name: feature-decomposition
+    version: ^1.1.0
+  - name: feature-discovery
+    version: ^1.0.0
+  - name: feature-execution
+    version: ^1.0.0
+  - name: feature-feasibility-experiment
+    version: ^1.0.0
+  - name: feature-implementation-plan
+    version: ^1.1.0
+  - name: feature-progress-tracking
+    version: ^1.0.0
+  - name: feature-readiness-review
+    version: ^1.1.0
+  - name: feature-requirement-clarification
+    version: ^1.0.0
+  - name: feature-risk-analysis
+    version: ^1.0.0
+  - name: feature-scope-analysis
+    version: ^1.0.0
+  - name: feature-solution-analysis
+    version: ^1.1.0
+  - name: quality-gates
+    version: ^1.0.0
+  - name: requirements-and-acceptance
+    version: ^1.1.0
+
+suggests:
+  - collaborative-feature-definition
+
+capabilities:
+  - reads-source
+
+agentOverrides:
+  codex:
+    interface:
+      display_name: Feature Engineering
+      short_description: Own a feature from request to completion review
+      default_prompt: Use Feature Engineering to take this feature request through the
+        lifecycle it warrants.

@@ -1,0 +1,58 @@
+# Avaliação da trilha HCM
+
+Critérios definidos antes das execuções. Este arquivo pertence ao avaliador, não aos insumos do agente.
+As entradas estão em `cases/`; são cenários sintéticos e não descrevem produtos reais da contraparte.
+
+## Execuções comparáveis
+
+Comparar a versão anterior preservada com a adaptada, usando o mesmo caso, modelo, ferramentas,
+limite de saída e instruções de acesso. Usar contextos novos e cópias distintas do catálogo. Cada
+agente recebe apenas seu caso e snapshot, e pode escrever apenas seu resultado temporário. Essa
+separação é procedimental: as ferramentas compartilham acesso ao filesystem, não há sandbox entre
+agentes. Conferir os caminhos lidos e relatar desvios ou limites de auditoria.
+
+Invocar explicitamente a skill inicial: `collaborative-feature-definition` para discovery e
+`feature-engineering` para solução/prontidão. Isso avalia uso explícito, não seleção automática.
+Não entregar o plano, esta rubrica, saídas anteriores ou suspeitas de falha ao agente.
+
+## Discovery
+
+| Critério                | Evidência esperada na resposta                                                                                           |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Escopo preciso          | Produz definição inicial e até três perguntas; não implementa nem trata o rascunho como aceito.                          |
+| Discovery               | Reutiliza as regras fornecidas e prioriza lacunas que mudam o fluxo; ausência de código não paralisa o levantamento.     |
+| Profundidade técnica    | Distingue pessoa/vínculos, identidade e início de vigência, sem inventar solução técnica.                                |
+| Critérios de decisão    | Explica o que muda com prazo, confirmação, população ou capacidade da interface.                                         |
+| Qualidade da solução    | Documento compreensível para analista/cliente, sem repetir perguntas já respondidas ou impor burocracia sem necessidade. |
+| Execução                | Entrega um rascunho com regras, pendências e próxima ação, dentro do limite de palavras.                                 |
+| Validação               | Critérios observáveis ou proposta de como defini-los; não alega homologação nem melhoria medida.                         |
+| Limites de conhecimento | Não transforma “API de tudo” em fato técnico, nem CPF em chave aprovada.                                                 |
+
+## Solução e prontidão
+
+| Critério                | Evidência esperada na resposta                                                                                                               |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Escopo preciso          | Entrega comparação, lacunas contratuais e parecer de prontidão; preserva BD-r3 e a separação de autoria.                                     |
+| Discovery               | Usa RT-r2/VF-r4 e identifica as lacunas de módulo, interface e garantias; não pede nova aprovação para regras já aceitas.                    |
+| Profundidade técnica    | Identifica identidade por vínculo, vigência, resultado desconhecido, falha parcial e transição carga/incremental.                            |
+| Critérios de decisão    | A janela noturna não atende ao prazo de 30 minutos; consulta e eventos permanecem condicionais; intervalo de consulta não prova prazo final. |
+| Qualidade da solução    | Define uma trajetória viável de refinamento sem impor tecnologia nem duplicar obrigações já resolvidas.                                      |
+| Execução                | Indica ações e responsáveis, inclusive trabalho independente; não interrompe tudo nem inicia implementação dependente.                       |
+| Validação               | Build verde e ensaio parcial não comprovam homologação; indica verificações pertinentes e mantém evidências planejadas como pendentes.       |
+| Limites de conhecimento | Não inventa deduplicação, consulta por chave, prazo do fornecedor, API ou evento HCM; não declara prontidão plena.                           |
+
+Registrar atendido, parcial ou não atendido com trecho/localização da resposta e limitação. Não
+produzir uma nota agregada que esconda um erro material. Uma execução por caso/versão não mede
+variabilidade nem demonstra melhoria causal geral. Casos adicionais só escritos ou revisados
+permanecem não executados.
+
+## Contexto sem código
+
+Caso adicional, com uso explícito de `feature-context-analysis`, definido antes de sua execução.
+Verificar o escopo documental, a investigação proporcional e a utilidade do relatório. O resultado
+deve distinguir versão informada e observada; não transferir a capacidade de R&S 6.10.4 para
+Administração de Pessoal 6.10.3; não transformar consulta de admissões em captura de alterações;
+e não estender um integrador interno a qualquer destino. A amostra sem contexto não confirma a
+capacidade do cliente. Esperar verificações priorizadas por consequência, sem solicitar acesso
+desnecessário, inventar interface ou concluir ausência universal. Essa execução avalia a versão
+adaptada; não constitui uma comparação com a anterior.

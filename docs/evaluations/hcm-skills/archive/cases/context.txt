@@ -1,0 +1,24 @@
+# Caso sintético: contexto HCM sem código
+
+Prepare um relatório de contexto de até 500 palavras para o analista. Queremos avaliar se há uma
+capacidade já disponível para obter alterações cadastrais retroativas e encaminhá-las a um destino
+externo em até quinze minutos. A tarefa é documental; não escolher nem implementar uma solução.
+Use somente os insumos abaixo, sem rede ou acesso a sistemas. São documentos sintéticos de teste,
+não descrições de capacidades reais garantidas pela Senior.
+
+- Ficha do cliente FC-r1: HCM XT, módulo Administração de Pessoal, versão informada 6.10.3. Não há
+  evidência independente da versão em execução, da configuração ou dos web services habilitados.
+- Documento D-A: descreve uma consulta de colaboradores admitidos por período, para Recrutamento
+  e Seleção 6.10.4. Não declara captura de alterações posteriores à admissão nem disponibilidade
+  dessa operação no módulo Administração de Pessoal.
+- Documento D-B: identifica um integrador interno entre componentes HCM e descreve carga inicial
+  e sincronização desses componentes. Não menciona o sistema externo desta demanda.
+- Relato R-A: um participante afirma que, se existe no manual, já está liberado no cliente e que
+  o integrador serve para qualquer destino.
+- Amostra A-A: um colaborador foi retornado por uma consulta em um ambiente de demonstração. A
+  revisão da interface, o módulo, a versão e os filtros desse ensaio não foram registrados.
+- Não temos código, acesso ao ambiente do cliente nem contrato de recepção do sistema externo.
+
+Explique o que pode ser afirmado, quais hipóteses permanecem abertas e as próximas verificações,
+priorizando o que muda a análise. Não solicite credenciais nem declare inexistente uma capacidade
+apenas porque não aparece nesses documentos.

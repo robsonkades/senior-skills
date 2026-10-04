@@ -1,0 +1,20 @@
+# Caso sintético: primeiro levantamento de uma integração HCM
+
+Sou analista de negócios e preciso preparar a primeira reunião de uma integração entre o HCM Senior
+e o sistema de acesso físico Predial. Não temos código, configuração exportada nem acesso a ambientes.
+Neste exercício, use somente estas informações; não consulte sistemas ou fontes externas.
+
+Ata de levantamento inicial:
+
+- A equipe de RH cadastra admissões no HCM e envia uma planilha ao time responsável pelo Predial.
+- O Predial controla acesso por pessoa. A responsável de RH, Lia, informou que a mesma pessoa pode
+  manter dois vínculos simultâneos em unidades diferentes e que encerrar um não deve retirar o
+  acesso justificado pelo outro.
+- Lia quer preparar acessos antes da admissão, mas só liberá-los na data de início autorizada.
+- O patrocinador pediu atualização “na hora”. Não detalhou esse prazo nem qual confirmação deseja.
+- Um participante disse: “HCM tem API de tudo, é só usar CPF”. Não apresentou documentação.
+- Ainda não sabemos a geração/módulo/versão do HCM nem quem responde tecnicamente pelo Predial.
+- Lia pode validar as regras de acesso sob sua responsabilidade. Não houve decisão de tecnologia.
+
+Prepare em português uma definição inicial revisável, com até três perguntas para a próxima reunião.
+Use até 600 palavras. A tarefa termina na definição inicial; não execute nem implemente integração.

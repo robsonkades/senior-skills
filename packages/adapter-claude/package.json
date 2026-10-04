@@ -1,0 +1,32 @@
+{
+  "name": "@senior-skills/adapter-claude",
+  "version": "1.0.0",
+  "description": "Claude Code agent adapter for senior-skills",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robsonkades/senior-skills.git",
+    "directory": "packages/adapter-claude"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@senior-skills/core": "1.0.0"
+  }
+}

@@ -1,0 +1,58 @@
+schemaVersion: 1
+
+name: feature-execution
+version: 1.0.0
+description: >-
+  Implementing an authorized plan through coherent, verifiable resources:
+  selecting ready work, implementing within accepted scope, running relevant
+  checks and reading their results, and reconciling deviations and blockers. Use
+  when implementation is starting, too many resources are partly finished, code
+  diverges from the plan, a blocked resource has stalled unrelated work, or
+  compilation is being treated as completion. Does not select repository gate
+  policy (quality-gates), own test-design methods, maintain the status format
+  (feature-progress-tracking), or define reporting discipline
+  (coding-agent-discipline).
+license: Apache-2.0
+
+authors:
+  - name: senior-skills contributors
+    url: https://github.com/robsonkades/senior-skills
+
+homepage: https://github.com/robsonkades/senior-skills/tree/main/skills/feature-execution
+repository:
+  type: git
+  url: https://github.com/robsonkades/senior-skills
+  directory: skills/feature-execution
+
+keywords:
+  - feature
+  - implementation
+  - validation
+  - blockers
+  - resources
+
+files:
+  - SKILL.md
+  - skill.yaml
+  - references/
+
+dependencies:
+  - name: coding-agent-discipline
+    version: ^1.0.0
+  - name: quality-gates
+    version: ^1.0.0
+
+suggests:
+  - feature-engineering
+  - feature-implementation-plan
+  - feature-progress-tracking
+
+capabilities:
+  - reads-source
+
+agentOverrides:
+  codex:
+    interface:
+      display_name: Feature Execution
+      short_description: One resource at a time, validated before done
+      default_prompt: Use Feature Execution to implement the next resource and validate it.

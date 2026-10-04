@@ -1,0 +1,32 @@
+# Acessos no Predial a partir das admissões no HCM
+
+**Definição inicial de negócio — revisão D0, 03/10/2026.** Product Feature, em descoberta. Profundidade **Deep**, pela integração externa e consequência sobre acesso físico. Fonte exclusiva: ata fornecida; comportamento dos sistemas não verificado.
+
+**OBJ-01 — objetivo proposto:** permitir que pessoas tenham os acessos justificados pelos seus vínculos no início autorizado, preservando os direitos dos vínculos ainda válidos. Beneficiários: pessoas admitidas, RH e operação Predial.
+
+**Conhecido e autoridade.** F-01: a ata relata cadastro de admissões pelo RH e envio de planilha ao Predial. F-02: a ata descreve controle de acesso por pessoa; Lia informou a existência de vínculos simultâneos em unidades diferentes. BR-01: encerrar um vínculo não deve retirar o acesso justificado pelo outro. BR-02: preparar acessos antecipadamente, liberando-os apenas na data autorizada. Fonte de BR-01/02: Lia, que valida regras sob sua responsabilidade; isso não estabelece autoridade técnica nem aprovação desta revisão. Autoria: analista de negócios; responsável pela definição completa: **OPEN**.
+
+**Valor.** A-01: a integração pode reduzir trabalho manual e atrasos, hipótese ainda não comprovada. Seria contrariada se a comparação com a planilha não mostrasse melhora relevante. Proposta de avaliação: comparar esforço e admissões com acesso disponível no início autorizado; linha de base, meta, período e responsável pela avaliação: **OPEN**.
+
+**Fluxo e escopo propostos — SC-01.** Cadastro da admissão → preparação do acesso → liberação na data autorizada; encerramento de um vínculo preserva acessos sustentados por outro. Pessoa, vínculo, unidade e autorização de acesso precisam permanecer distinguíveis no levantamento. Abrangência de unidades e outros movimentos cadastrais permanece aberta. Este trabalho termina no rascunho; não inclui execução ou implementação.
+
+**Critérios candidatos, sujeitos à revisão:**
+
+- **BAC-01 → OBJ-01/BR-01/SC-01:** com dois vínculos simultâneos em unidades diferentes, encerrar um mantém o acesso justificado pelo vínculo restante. Verificação planejada: percorrer esse cenário com Lia.
+- **BAC-02 → OBJ-01/BR-02/SC-01:** acessos dependentes exclusivamente de uma admissão futura podem ser preparados, não são liberados antes e ficam disponíveis na data autorizada. Verificação planejada: cenários antes/no início com Lia; horário, fuso e tolerância dependem de U-02.
+
+**Pendências e riscos — todas OPEN, impacto alto:**
+
+- **U-01:** evidência do problema atual; sem ela, o benefício pode não justificar a mudança.
+- **U-02:** “na hora” pode significar recebimento da informação ou acesso efetivamente disponível. Marco inicial, prazo e confirmação não definidos impedem fechar a aceitação temporal.
+- **U-03:** geração/módulo/versão HCM, capacidades documentadas, identificação de pessoa/vínculo e responsável técnico Predial. “API de tudo” e “é só usar CPF” são alegações sem evidência, não premissas adotadas; uma associação incorreta pode afetar outra pessoa ou vínculo.
+- **U-04:** efeitos de adiamento/cancelamento, informação divergente, indisponibilidade e repetição. Sem regras, pode haver liberação indevida ou manutenção incorreta de acesso.
+
+**Perguntas para a reunião — resultado esperado da admissão:**
+
+1. **Q-01, a RH/patrocinador:** que situação concreta torna insuficiente manter a planilha? Define U-01; exemplos com impacto sustentam a mudança, ausência de ganho exige reconsiderá-la.
+2. **Q-02, ao patrocinador:** qual resultado observável significa atualização concluída? Resolve parte de U-02; recebimento e acesso disponível exigem confirmações diferentes. Recomendo discutir a disponibilidade efetiva, por refletir o objetivo.
+3. **Q-03, a Lia:** qual deve ser o efeito de adiar uma admissão já preparada? Resolve parte de U-04; manter ou alterar a liberação muda o risco de acesso antecipado.
+
+**Encaminhamento:** continuar descoberta; pendências não impedem este rascunho, mas impedem fechar a definição. Análise de engenharia obrigatória, com proprietário pendente, após acordo do negócio; deverá obter evidências para U-03. Sem decomposição nesta revisão: um resultado de acesso. Nenhum gap aceito, aprovação ou validação executada. Revisão inicial, sem artefatos anteriores invalidados.
+

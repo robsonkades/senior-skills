@@ -1,0 +1,779 @@
+{
+  "date": "2026-10-03",
+  "isolation": "Fresh contexts; shared filesystem with procedural source restrictions; access logs are self-reported.",
+  "model": "Inherited coordinator model; no override; exact backend revision not exposed.",
+  "skillVersion": "1.0.0",
+  "snapshot": {
+    "version": "1.0.0",
+    "skillFiles": [
+      {
+        "path": "architecture-coupling-and-quanta/references/coupling-vocabulary.md",
+        "sha256": "d6e2c228eeb6394b3f00c507e6c3853e147063ff020090665b348de0d146fb12"
+      },
+      {
+        "path": "architecture-coupling-and-quanta/references/evidence-and-disagreements.md",
+        "sha256": "634e40516debe96ee090dcf7c1a7c11b5de0f94b8a11793044a7ed90a6b6ac2b"
+      },
+      {
+        "path": "architecture-coupling-and-quanta/references/measuring-the-unit.md",
+        "sha256": "0a4cdb4f71946481f5d38fc4d992e8041ccc32f8096ab147d41995c19adc9994"
+      },
+      {
+        "path": "architecture-coupling-and-quanta/references/validation-cases.md",
+        "sha256": "675060c0bbe88106aa7486df1913e2b5c64a4e11e08aa7627aabbf447dfefb14"
+      },
+      {
+        "path": "architecture-coupling-and-quanta/SKILL.md",
+        "sha256": "1f5b5a239e0a58bb38aee29dccd1ec1f67309697e152e9f31fc00577856a4ef7"
+      },
+      {
+        "path": "architecture-coupling-and-quanta/skill.yaml",
+        "sha256": "3d517395d1beaf8b79ce0775758069b813d43db08ae5af5b2158351be033775e"
+      },
+      {
+        "path": "architecture-decision-making/references/evidence-and-tooling.md",
+        "sha256": "43748dba533db9c0fcca1acab649e7e4fb5a9b87d0d0178ee639189413afbe5f"
+      },
+      {
+        "path": "architecture-decision-making/references/templates-and-lifecycle.md",
+        "sha256": "0cc5e0e0d034a920033ec2078227794e9494b546594ef41937782bc6d2374bde"
+      },
+      {
+        "path": "architecture-decision-making/references/validation-cases.md",
+        "sha256": "a19562ffeb7581e9c7e07f80df6630ceea34c75a79cc4b61d30178e23aa296f2"
+      },
+      {
+        "path": "architecture-decision-making/references/writing-the-record.md",
+        "sha256": "aa443d6b62dfbf243f2b37110ac4217d09877b29433f7be9610698d8583e1b57"
+      },
+      {
+        "path": "architecture-decision-making/SKILL.md",
+        "sha256": "de000d3e3df1b16aafbf837069306101298b4b4402d3a72402aeb8b552b1c3c0"
+      },
+      {
+        "path": "architecture-decision-making/skill.yaml",
+        "sha256": "5cc543c9246b04b31cbdd5fbe75c94e7aadf35cd7527a80910bef8394aeab010"
+      },
+      {
+        "path": "architecture-trade-off-analysis/references/bias-and-evidence.md",
+        "sha256": "a731d9c1cd50e931c911b9c1fff18575fbb9aa40ae6931efc138a8e1af53166a"
+      },
+      {
+        "path": "architecture-trade-off-analysis/references/qualitative-and-quantitative.md",
+        "sha256": "f59e8e50a392d28b9be2cdd7aa579f50b103e178df35874ce204728b311a559a"
+      },
+      {
+        "path": "architecture-trade-off-analysis/references/validation-cases.md",
+        "sha256": "f12ee03e485033d72b5a4694e72a91d7a2e2d6d972b281eea61df672ff3930d6"
+      },
+      {
+        "path": "architecture-trade-off-analysis/references/worked-analysis.md",
+        "sha256": "7bbccf10a4da8d7111a2f779ffff29e66bef42c75d0b493d4acd13b1638d7f8a"
+      },
+      {
+        "path": "architecture-trade-off-analysis/SKILL.md",
+        "sha256": "4194bb5ee8dadbd52d1683ed116062e369b8cf0162ea53d9dac95aa5f540cbbc"
+      },
+      {
+        "path": "architecture-trade-off-analysis/skill.yaml",
+        "sha256": "aa1a34326abb1b2c2577267c6849e3cdf61cc2da65ce1d11821f19b0fca2a43b"
+      },
+      {
+        "path": "clean-delivery-workflow/references/routing.md",
+        "sha256": "722dc27e35dd5a719702cda20d8113c08c45e45e6e56b57b316b83271a5680b8"
+      },
+      {
+        "path": "clean-delivery-workflow/references/workflow-by-risk.md",
+        "sha256": "10c71dab2730a5b1880689586b857eadfbe6a52a1572256babb2a70d405472f5"
+      },
+      {
+        "path": "clean-delivery-workflow/SKILL.md",
+        "sha256": "3c58f1b8f998a627219b0e3cd52ecd66a87b05a36d97de501f48e2a78ce41cb8"
+      },
+      {
+        "path": "clean-delivery-workflow/skill.yaml",
+        "sha256": "e96a4c51e1de9c4097d02db0526d356158603edf4b6bf22d4c710938c00654ad"
+      },
+      {
+        "path": "code-review/references/giving-and-receiving.md",
+        "sha256": "4fa01fb30f56c8f98a4fcbd796c848d06ed620ef0297b93f1e1d4215f0fb830b"
+      },
+      {
+        "path": "code-review/references/what-to-look-for.md",
+        "sha256": "019657524650bac94d53d07df689df9957b9497e37306fd7496e1d19a65e42be"
+      },
+      {
+        "path": "code-review/SKILL.md",
+        "sha256": "9a1a4433efbd35772dd0ca1289d2b8c41f3d5b4babb91810d1d5393e68b5bc2d"
+      },
+      {
+        "path": "code-review/skill.yaml",
+        "sha256": "6459be2b77bd23b983b04a99c3afac14631b5e20cb3d0bdca4d53895bfc552ea"
+      },
+      {
+        "path": "coding-agent-discipline/references/scope-and-restraint.md",
+        "sha256": "019a154a74af4064afd44bd03ef30acea3586894caa990bb8996bbd9947980a8"
+      },
+      {
+        "path": "coding-agent-discipline/references/verification.md",
+        "sha256": "b926f62fb251ab127fe24e41cb0744a6696e7e6464bab1af661ec0bf5fa0885f"
+      },
+      {
+        "path": "coding-agent-discipline/SKILL.md",
+        "sha256": "2554d007e0301992ea8a400b0feb889949655b949e9d6fd84513e97d62094970"
+      },
+      {
+        "path": "coding-agent-discipline/skill.yaml",
+        "sha256": "f780288edc50f6dab79bce7600af1bc81c680b756731de27ef2968a03811fe0e"
+      },
+      {
+        "path": "collaborative-feature-definition/references/engineering-analysis.md",
+        "sha256": "9269fe5679c483c77c675d21c788e820e233bac02a0d3c4930e91fb3cd50fab3"
+      },
+      {
+        "path": "collaborative-feature-definition/references/hcm-business-discovery.md",
+        "sha256": "23bf8ef693354160b6c009ff695ed050d3433ef08f1c9faeaa4f4b05e0f58c44"
+      },
+      {
+        "path": "collaborative-feature-definition/references/integration-checklist-workshop.md",
+        "sha256": "8238ecb7de1a0e237c998223a2cba9f5567f505c7f84b4f213da54ea51a7f4af"
+      },
+      {
+        "path": "collaborative-feature-definition/references/product-feature.md",
+        "sha256": "02927cdf200c858827630ef1ad09d778d2597dab06898f13904a1cbd2fb98dfb"
+      },
+      {
+        "path": "collaborative-feature-definition/references/tech-feature.md",
+        "sha256": "7f48986f3758fb01239cfa74b741266f1476ea72eb6eae62dd1ffca13f734790"
+      },
+      {
+        "path": "collaborative-feature-definition/SKILL.md",
+        "sha256": "91dcf93eab2132ff6ece66e807cd731e928c913bb4580e072f1e9e4909db6db8"
+      },
+      {
+        "path": "collaborative-feature-definition/skill.yaml",
+        "sha256": "c8e0852fd8537451ccf47db4ea67305fc9afc5e9f500a3b513d9dbc80c7d22b8"
+      },
+      {
+        "path": "debugging/references/method.md",
+        "sha256": "ea498fde1a582575048bdb379978301392f5ffab0df20e87834420d38ed1eb6f"
+      },
+      {
+        "path": "debugging/references/production-evidence.md",
+        "sha256": "0c68882de68f7062d48b77def61447818b0c96e9d03d24c9d0daafe0f9e5d462"
+      },
+      {
+        "path": "debugging/SKILL.md",
+        "sha256": "cc38cde61e014c31ba3d3085e8f2209219816ef9e5841458953cbbf35d9b8155"
+      },
+      {
+        "path": "debugging/skill.yaml",
+        "sha256": "778bf194a327d9fbc534d6d0c324905ab37044491aa5206a099bef3af2d47574"
+      },
+      {
+        "path": "delivery-semantics/references/ack-placement.md",
+        "sha256": "e144db9ca1bb1ef9bb1a0ae5ffcb445890a2993bd069860e4c5cd24e537165c5"
+      },
+      {
+        "path": "delivery-semantics/references/exactly-once-boundary.md",
+        "sha256": "922353700fcac1c9d0fa4315ea52c5d8ef28eeb736c8589b11044798e0472b31"
+      },
+      {
+        "path": "delivery-semantics/SKILL.md",
+        "sha256": "9bbe5902cfc37a29832833dfd59c2615b1d5d48ca4dacc1092c785d0b912f3c6"
+      },
+      {
+        "path": "delivery-semantics/skill.yaml",
+        "sha256": "7ce1ac9cbfe8a538903819acd2660c5dc356e04635cd21d49147c1e7d2c80fe1"
+      },
+      {
+        "path": "failure-models/references/failure-domains-and-arithmetic.md",
+        "sha256": "2451c509e8df5f07ffc0845655bf0a8efd4beb2cc56ff242fad79ad4278ec364"
+      },
+      {
+        "path": "failure-models/references/the-unknown-outcome.md",
+        "sha256": "af76e911e32863a1cdb1917f4725ba8e2bb44fb11ca7387a925cc49470dd8d22"
+      },
+      {
+        "path": "failure-models/SKILL.md",
+        "sha256": "fc35f757eca0d3892e9da3f4e73629c2616db68af06459cfcc11b673b872a8f4"
+      },
+      {
+        "path": "failure-models/skill.yaml",
+        "sha256": "62fe6adabe3c726b2283d89cfcc5b8b6638ae931a25395433d436af212ae118a"
+      },
+      {
+        "path": "feature-architecture-analysis/references/impact-map.md",
+        "sha256": "bc85ebd2a6cc44cd3cd17f1a4993b78c1618acc0c08fc341c2db588ca4a7a5a3"
+      },
+      {
+        "path": "feature-architecture-analysis/SKILL.md",
+        "sha256": "56b4e71263667123a44cbcdae11b5ae171a61a7386675443319e189ddfddbd8a"
+      },
+      {
+        "path": "feature-architecture-analysis/skill.yaml",
+        "sha256": "747a5f420ff3169920123e566da5993bfb4f703f71e3bc3c5e385eaba1e89772"
+      },
+      {
+        "path": "feature-context-analysis/references/investigation-checklist.md",
+        "sha256": "814803635dd1d2b617594ec7ea7e6919fb35306b38b0fc3b665b98ab42c86b99"
+      },
+      {
+        "path": "feature-context-analysis/references/senior-connect-context.md",
+        "sha256": "5eca49f59fab26efe446f4dcf107c573d6b36e73e1155400f4d879a4774b2156"
+      },
+      {
+        "path": "feature-context-analysis/references/senior-hcm-context.md",
+        "sha256": "67fd64326b3d2d36e79f5410ea6a1d80cbc923248e0f7c5c1a4d2e5b75d45d8b"
+      },
+      {
+        "path": "feature-context-analysis/SKILL.md",
+        "sha256": "49915eef9b2f64810164be45c0a6b1ba28ce818f3517278cc973766463c613da"
+      },
+      {
+        "path": "feature-context-analysis/skill.yaml",
+        "sha256": "3d33ae5f12325db9aad4c50274b67e67d722d2e8dab7718aebf0aac1c840ef0a"
+      },
+      {
+        "path": "feature-contract-definition/references/contract-surfaces.md",
+        "sha256": "88d6b86209b737ab7f238846eb92b2df8f46e7b1c53e60e7dc63f6041bfeca19"
+      },
+      {
+        "path": "feature-contract-definition/references/hcm-data-and-interactions.md",
+        "sha256": "98c0c631a2db18417e2933b1ed378f3133f3a61a4d189cc04561617fddc169f4"
+      },
+      {
+        "path": "feature-contract-definition/SKILL.md",
+        "sha256": "0b4b2b6690fde6d5b87c721367db0bff2318de95260058444de8592da988a353"
+      },
+      {
+        "path": "feature-contract-definition/skill.yaml",
+        "sha256": "7da4623bd14b8ddceb06d0a801dfaa2d1a4d7879abd88dc5305c16f63a7960c3"
+      },
+      {
+        "path": "feature-decision-analysis/references/provenance-and-authority.md",
+        "sha256": "fc61157634839110c2af62ba75b1ed85edcbcd37a654085aa772dc37f3973e21"
+      },
+      {
+        "path": "feature-decision-analysis/references/technology-questions.md",
+        "sha256": "b0105e59ecf6be451a91ad8709b9cbf423bcfa44e68e03437d919fe4a0eee940"
+      },
+      {
+        "path": "feature-decision-analysis/SKILL.md",
+        "sha256": "08191aa46d8613c6bd32abb2a8e84337846b0ffba7a3d56c861507bd458974d9"
+      },
+      {
+        "path": "feature-decision-analysis/skill.yaml",
+        "sha256": "b8c76c433d43dd58baee3625a69e7c1249573547d07fd3a58c417500c4f0bbb7"
+      },
+      {
+        "path": "feature-decomposition/references/resource-catalogue.md",
+        "sha256": "ccd33ba21269da7f33d78357e52d26a62054044ec0569f94abf2f5a7b569890a"
+      },
+      {
+        "path": "feature-decomposition/SKILL.md",
+        "sha256": "db736e2a0dc6561daa924c90f9f9dbe9c7d0a99a642030c61b8f7f345228231f"
+      },
+      {
+        "path": "feature-decomposition/skill.yaml",
+        "sha256": "52c527427eb4a320a378cab5bfe8ea6d0ad56beba6346e2011599f019f037a4e"
+      },
+      {
+        "path": "feature-discovery/references/ledger-format.md",
+        "sha256": "cceaf6ca08af635f3e17c60ce4d99be3d490c3dc3255a295c1e0b1a407b31ef7"
+      },
+      {
+        "path": "feature-discovery/SKILL.md",
+        "sha256": "4d870c13bb39c35326bef2a4e823b092302fb6856355b40e5fa45268bb9a2bb0"
+      },
+      {
+        "path": "feature-discovery/skill.yaml",
+        "sha256": "61712035ffe372dddfbe287f0ee12489e522e24b81da453164590d4b81afb185"
+      },
+      {
+        "path": "feature-engineering/references/artefact-contract.md",
+        "sha256": "e0144c970c3daa5ab003394fe3b72fb53c8b9c7961be557b108d0cf4457e7226"
+      },
+      {
+        "path": "feature-engineering/references/depth-and-phases.md",
+        "sha256": "e14165925a777802294e1d441a3ac5a5028e4cc78f74faaed088aa28bd2d5ce2"
+      },
+      {
+        "path": "feature-engineering/references/dossier-layout.md",
+        "sha256": "be3ff02e95ad230122aaa0910dcf86a8ef37b05edfb32e535934f078bf0f0ea1"
+      },
+      {
+        "path": "feature-engineering/references/hcm-analysis-route.md",
+        "sha256": "cf267e0734a8b075f5e27c56c3df58cfaa5ed75a040c22c2a0b4e5418ebe2983"
+      },
+      {
+        "path": "feature-engineering/references/validation-cases.md",
+        "sha256": "76af99da8f7e39a19767776dc66ecfaad1d3077fb0ea71f54293cf2f0e82d727"
+      },
+      {
+        "path": "feature-engineering/SKILL.md",
+        "sha256": "920904a8afa9a4ec1afedfbeed77230ad62a8f9d7b257b6ffca9c8b19db37126"
+      },
+      {
+        "path": "feature-engineering/skill.yaml",
+        "sha256": "44e25954ee57b26d89d65d6c152df3cd95aca1940dd2e734cc8c4b08eaadce25"
+      },
+      {
+        "path": "feature-execution/references/deviation-and-blockers.md",
+        "sha256": "db3e3027af291d74cbf2e138da3e1cb350f015769ccfb7bc336d1a1e1307334c"
+      },
+      {
+        "path": "feature-execution/references/validation-by-resource.md",
+        "sha256": "4b5ff9b5720d4e8394ad1d9a4030e011542e506e67414c3def0f76aa8f30a0a2"
+      },
+      {
+        "path": "feature-execution/SKILL.md",
+        "sha256": "d0734b9e22d0feb90a8746b461791c1611974e412d7ffd424c8b5b90207b6d6b"
+      },
+      {
+        "path": "feature-execution/skill.yaml",
+        "sha256": "b948d333dfee90364ae41b0e314bd404121c0f93901e1344158854c67094d49c"
+      },
+      {
+        "path": "feature-feasibility-experiment/references/experiment-record.md",
+        "sha256": "f2b5da10c0985fb131f1bd7642cab99de9889cb5d8394196608ad8af3d52bba9"
+      },
+      {
+        "path": "feature-feasibility-experiment/SKILL.md",
+        "sha256": "ccecaaeaac3cab3825691bb8feb82326dff3255c9c15dbff90b20c02d8cad535"
+      },
+      {
+        "path": "feature-feasibility-experiment/skill.yaml",
+        "sha256": "f2e3c6737334a60a017257554734eb7243eab496ff34b42ddd4e2611cd082d82"
+      },
+      {
+        "path": "feature-implementation-plan/references/plan-template.md",
+        "sha256": "6c8aa68259ed259b82d6ec27a8ba4b170be0062fd0ef77db0f8693ceaaefc6a2"
+      },
+      {
+        "path": "feature-implementation-plan/SKILL.md",
+        "sha256": "aac2cf9c4ceda15943e15944e1888600ffff5c1da65f82c20b6f93c3cbccc6dc"
+      },
+      {
+        "path": "feature-implementation-plan/skill.yaml",
+        "sha256": "9bb3c57b1ff5d9dd14ee934aa929b6a20fc73c552b96bacc0400235389550c34"
+      },
+      {
+        "path": "feature-progress-tracking/references/artefact-formats.md",
+        "sha256": "f6dc493f9e3ab6e5a1ad532b52d16e32786eaf262b4c625d50b52b62ab5aaac1"
+      },
+      {
+        "path": "feature-progress-tracking/SKILL.md",
+        "sha256": "3c1ac0fa096280177f34b0dddfcdad6e442d100edee589253c2cc526e013305d"
+      },
+      {
+        "path": "feature-progress-tracking/skill.yaml",
+        "sha256": "aa470d977fde41d78ffdab73e3e6652ee7b6f8ccdd6786c03c79c0643f20155d"
+      },
+      {
+        "path": "feature-readiness-review/references/completion-review.md",
+        "sha256": "26e589540ada56a2cc4302047b297814698898e70c152898e84aba4002cac1a6"
+      },
+      {
+        "path": "feature-readiness-review/references/hcm-readiness.md",
+        "sha256": "79ff995c6b3701b759e14ac6d3c4a50d3d159a14b1f83d3332779829dc857ddf"
+      },
+      {
+        "path": "feature-readiness-review/references/readiness-checklist.md",
+        "sha256": "3f5c8a2ab37e58068a65052bd7e6fb6656d7a458990ef8243c5e3cfada6b43db"
+      },
+      {
+        "path": "feature-readiness-review/SKILL.md",
+        "sha256": "35b96ef8870bfea11db7c832f6aa83b7c055a3376a71f2b3813d7928a6bde627"
+      },
+      {
+        "path": "feature-readiness-review/skill.yaml",
+        "sha256": "ad48a73ba9145f3cc050bf0ad1e5e58aab70b2a8cac7fa27cbbb8067a609847f"
+      },
+      {
+        "path": "feature-requirement-clarification/references/impact-and-blocking.md",
+        "sha256": "f6dbdf5a6796b3cc272570b85e54fec0e8a8dab23dbdb61228275ebb526c8e59"
+      },
+      {
+        "path": "feature-requirement-clarification/references/question-rounds.md",
+        "sha256": "53b42aaeafc82159af5ab9eb66d1f41860cce615b7bb6d87f535c93cadc645c8"
+      },
+      {
+        "path": "feature-requirement-clarification/SKILL.md",
+        "sha256": "4e16f03bf3a3f2e48c3ff8ba58000b50d9de60699a80e875dc6b9cd8762e0f79"
+      },
+      {
+        "path": "feature-requirement-clarification/skill.yaml",
+        "sha256": "67a00aa342712aeb5bb65b6728c72c7be99e6b4c600f05110513c481d8297e50"
+      },
+      {
+        "path": "feature-risk-analysis/references/risk-register.md",
+        "sha256": "17778f288b12738a36aaca6062b0be918762f519fe7fe3ed194f4fac645684fa"
+      },
+      {
+        "path": "feature-risk-analysis/SKILL.md",
+        "sha256": "28bcaf95f8bb3535e1f58c17355c5730e3fdb023c420be0a2340f9f2834333b2"
+      },
+      {
+        "path": "feature-risk-analysis/skill.yaml",
+        "sha256": "f609a49ca445a64e0fd5348003b5d68cf74177a3d80033249d5c0f2d61dca0b3"
+      },
+      {
+        "path": "feature-scope-analysis/references/scope-creep-catalogue.md",
+        "sha256": "3eca0d3137de5921093f2f2fc80d4e80e226f90ea768470dc87e5aee51807b30"
+      },
+      {
+        "path": "feature-scope-analysis/SKILL.md",
+        "sha256": "3419a70120f2192be500fb3f20b499ed20565da8599f3dd60578b9fc3e7a647a"
+      },
+      {
+        "path": "feature-scope-analysis/skill.yaml",
+        "sha256": "c5d7d7ab7efc121ecbffaa1ff1ecae1cfe132bc1983168f216aecd3162ab16d3"
+      },
+      {
+        "path": "feature-solution-analysis/references/evaluation-axes.md",
+        "sha256": "b6f97bacc36f3fa08c60abfd75e7a0d50c5d7074000489d9f25525efd0ea2078"
+      },
+      {
+        "path": "feature-solution-analysis/references/hcm-integration-options.md",
+        "sha256": "d698baf3e8e391796ecd29b94ecd211315eb058a094f2714e5e072a65e47ba92"
+      },
+      {
+        "path": "feature-solution-analysis/SKILL.md",
+        "sha256": "9e8db94638ddba6a6cd10db26b4abadb58b4d95a2912bb2261958432381376c2"
+      },
+      {
+        "path": "feature-solution-analysis/skill.yaml",
+        "sha256": "c4661494a9c98b0332683a4b95f5e555df1d8bc7d902afcab10a3f3fff769038"
+      },
+      {
+        "path": "layering-and-boundaries/references/boundary-enforcement.md",
+        "sha256": "9b668abaa7b4644055ea311a377251cd80e5fbef507aad447a6937a26e5f8c30"
+      },
+      {
+        "path": "layering-and-boundaries/references/layering-styles.md",
+        "sha256": "5630acbf671a068fbed1efb6ac0d744a1c27f1877d7d5b58df274ece8d886bfc"
+      },
+      {
+        "path": "layering-and-boundaries/SKILL.md",
+        "sha256": "7af13a101b0dfd5b1a8970da7f7a7f05ef818d54c305d038a08eb8755350715a"
+      },
+      {
+        "path": "layering-and-boundaries/skill.yaml",
+        "sha256": "1ce5a8b8ef60089253bc57267f0327fdd5a2d91b7125dbf5c12a6d78c4205908"
+      },
+      {
+        "path": "quality-gates/references/gate-catalogue.md",
+        "sha256": "1a8ca161c01b766a1341210d29a37835067b1ba31ac899224171d9ae9661b083"
+      },
+      {
+        "path": "quality-gates/references/selecting-gates.md",
+        "sha256": "b8ce2977d308339809aef682382abd4e0cd6b9f9829af028b1abbf3a01a1a623"
+      },
+      {
+        "path": "quality-gates/SKILL.md",
+        "sha256": "583c012d1ab4fa35f233163b848c01f1c51c6943dba8f6fe7d5787c3c4c8f37b"
+      },
+      {
+        "path": "quality-gates/skill.yaml",
+        "sha256": "f006c3fcd02281233d90c33aa6111165f0c8ab943d268347c4d97783edaf1f7b"
+      },
+      {
+        "path": "requirements-and-acceptance/references/acceptance-criteria.md",
+        "sha256": "c521e4eba288200de113d03d087dc32256b724880acdd9974124dfa2f7b36d24"
+      },
+      {
+        "path": "requirements-and-acceptance/references/ambiguity-checklist.md",
+        "sha256": "ab6dc1c43086b284f13b4a65463d4f57be45f9a493300487adc0f7e611990168"
+      },
+      {
+        "path": "requirements-and-acceptance/SKILL.md",
+        "sha256": "fd67be8893b015414171f6971d6cd571a2cfab943140803bfc52cabe433fb771"
+      },
+      {
+        "path": "requirements-and-acceptance/skill.yaml",
+        "sha256": "fcfe7e4cbee5cf2813c4b764336958c1b654c29d7b59412b76b00b750848fef9"
+      },
+      {
+        "path": "rpc-and-api-contracts/references/contract-evolution.md",
+        "sha256": "dfa4a274ec7eda45e7322422a797b58be3873920d624260e739d048b589e0d6a"
+      },
+      {
+        "path": "rpc-and-api-contracts/references/error-contract.md",
+        "sha256": "7bf501559dd97fb5a12a113dbe5ef852b25ceda694cb40c47a5e7d6fb6de9e5c"
+      },
+      {
+        "path": "rpc-and-api-contracts/SKILL.md",
+        "sha256": "1aa1a0a82780dfbbc0149147746609d9aea0b13561e5870282998db43b916b1f"
+      },
+      {
+        "path": "rpc-and-api-contracts/skill.yaml",
+        "sha256": "2d0930b1875d3d0cfda6259ac3d6b20d1773cf06274af69d2e694f0e849c60ba"
+      },
+      {
+        "path": "schema-evolution-and-compatibility/references/avro.md",
+        "sha256": "b21e1d32eb1218c6b4aee234ba02e378f44ce0407514e708424f6092f7257180"
+      },
+      {
+        "path": "schema-evolution-and-compatibility/references/protobuf.md",
+        "sha256": "0811ac0ac62d4dca4234c76db15bdd956e9a3e6695bbf56d5cf83c3c01139e20"
+      },
+      {
+        "path": "schema-evolution-and-compatibility/references/registry-and-json.md",
+        "sha256": "6937afe7a0256cc676503d5312f7b884a55f5d03e983c153f7429a1cab6395bd"
+      },
+      {
+        "path": "schema-evolution-and-compatibility/references/runbook-and-ci.md",
+        "sha256": "8b1a5f123765243f4bc193ab97041e773b40a390742db78474a7942aa0f70c3f"
+      },
+      {
+        "path": "schema-evolution-and-compatibility/SKILL.md",
+        "sha256": "db15c517ffbecf67bca26fd4f02515694ccc0dcc9b4acadc5a7fea41007c2b3c"
+      },
+      {
+        "path": "schema-evolution-and-compatibility/skill.yaml",
+        "sha256": "ef99b234ee096aa37f5002fb7f45789fc483adeca9bb68b27f41f89f8d0973dc"
+      },
+      {
+        "path": "technical-debt-decisions/references/deciding.md",
+        "sha256": "18825a6d2cd992d406cd293c7ea2d4b20b344364e2d2e518f92fe85c7a7788c1"
+      },
+      {
+        "path": "technical-debt-decisions/references/recording-and-repaying.md",
+        "sha256": "c5d4b4959ae0543c56d2df53cd0730196b09fb42c87195f1c891de1a19baf64b"
+      },
+      {
+        "path": "technical-debt-decisions/SKILL.md",
+        "sha256": "2c4d578785fd1842a19398d0193b16543e4d134ab89bce89366c00a4fce91a6e"
+      },
+      {
+        "path": "technical-debt-decisions/skill.yaml",
+        "sha256": "8cc04935c69d3312749e8ce3c1476e0b190e8e948f825949ead0aa4523681411"
+      }
+    ],
+    "cases": {
+      "meeting": "f5ece7574a4d2fe4444a8b80c87f7ad3dd391790496e7a73f6f66a7f6fa859c4",
+      "configuration": "6ff57bb75d1d52b2d7da011e6122db309ca0a816eb2c0b46c22bc80a924f8fb6"
+    },
+    "rubricSha256": "b014d89b4883b76e1b36105df1971c92a7d14b90badc064fdd853f150c28359b"
+  },
+  "runs": [
+    {
+      "case": "meeting",
+      "actor": "/root/checklist_meeting_eval",
+      "inputSha256": "f5ece7574a4d2fe4444a8b80c87f7ad3dd391790496e7a73f6f66a7f6fa859c4",
+      "outputSha256": "5963f014bc9f90aff2f5085e9c2af02de794ddd7dec0094d51d5f51e8bddbbdf",
+      "accessLogSha256": "1a1d5040dad11fbdd694242ed023a4d86de16194d08c469af3c9466f2be5afbf",
+      "outputWords": 1347
+    },
+    {
+      "case": "configuration",
+      "actor": "/root/checklist_configuration_eval",
+      "inputSha256": "6ff57bb75d1d52b2d7da011e6122db309ca0a816eb2c0b46c22bc80a924f8fb6",
+      "outputSha256": "dbc5af568bee8047e758c642c7a5b45393d1ab5783dd8663df990d1e337ced3a",
+      "accessLogSha256": "039aadb784dd81aba9adc0b1289add947cc0b1e8ecf7e8006db1ef4a8de17f9f",
+      "outputWords": 935
+    }
+  ],
+  "structuralChecks": {
+    "skillsValidated": 32,
+    "workspaceVersions": 8,
+    "thirdPartyEntriesUnchanged": 109,
+    "sourceFilesUnchanged": 2,
+    "cliVersion": "1.0.0",
+    "packageIntegrities": [
+      {
+        "name": "architecture-coupling-and-quanta",
+        "previousVersion": "1.1.7",
+        "version": "1.0.0",
+        "integrity": "sha256-kjYZmXcg6+MOM5tDrDWbyW4PvS+k7iOm8M6beilQDik="
+      },
+      {
+        "name": "architecture-decision-making",
+        "previousVersion": "2.1.6",
+        "version": "1.0.0",
+        "integrity": "sha256-nTvpIttc3rmXxBz0fBtONe1dyVXwdFw8EsgksaUckK4="
+      },
+      {
+        "name": "architecture-trade-off-analysis",
+        "previousVersion": "1.2.6",
+        "version": "1.0.0",
+        "integrity": "sha256-jM1uPxaQC6s8SJ/OL/oP7kA8BKlpkWic6fk0TIwlLwY="
+      },
+      {
+        "name": "clean-delivery-workflow",
+        "previousVersion": "1.1.7",
+        "version": "1.0.0",
+        "integrity": "sha256-q4o+tDJHWFWEUPwmCLxHbgoRsxcRb2YvjXrS6wdknvM="
+      },
+      {
+        "name": "code-review",
+        "previousVersion": "1.0.7",
+        "version": "1.0.0",
+        "integrity": "sha256-KRr2GeF1yBdqJ5iIgZH79u1f/cYV+Xz/jhEmkZLXDtQ="
+      },
+      {
+        "name": "coding-agent-discipline",
+        "previousVersion": "1.0.6",
+        "version": "1.0.0",
+        "integrity": "sha256-OJ1lmqUdsw9eJ3wTtnnCwnyTsiXwBJThFhpKir2bH3k="
+      },
+      {
+        "name": "collaborative-feature-definition",
+        "previousVersion": "1.2.1",
+        "version": "1.0.0",
+        "integrity": "sha256-+Yp6xrT7xDB9zpME+H4TBj71WlPdL3VCA13j42nXqWM="
+      },
+      {
+        "name": "debugging",
+        "previousVersion": "1.1.6",
+        "version": "1.0.0",
+        "integrity": "sha256-jwhyLxIZumt7H+VGM9L/ZRIjQZ62YJWLCrZYR4yR2kQ="
+      },
+      {
+        "name": "delivery-semantics",
+        "previousVersion": "1.2.6",
+        "version": "1.0.0",
+        "integrity": "sha256-yCHKJD3VoHt6Ix6h+IEaVLcuMnyhrNujB3kMTt7gvgI="
+      },
+      {
+        "name": "failure-models",
+        "previousVersion": "1.3.7",
+        "version": "1.0.0",
+        "integrity": "sha256-nZELPhPOU36kE1tvtO0AZAYjT7PK+gakqpFe7Ar9CAI="
+      },
+      {
+        "name": "feature-architecture-analysis",
+        "previousVersion": "1.1.5",
+        "version": "1.0.0",
+        "integrity": "sha256-kxKr0HUoZ5+/USpCBxZg5CyUta4xZaXSQ9WY+pl6BRY="
+      },
+      {
+        "name": "feature-context-analysis",
+        "previousVersion": "1.2.1",
+        "version": "1.0.0",
+        "integrity": "sha256-JbccM+0uYs6uS2j0NPhbxIRvcMATSE2VccxPzgCswUI="
+      },
+      {
+        "name": "feature-contract-definition",
+        "previousVersion": "1.1.1",
+        "version": "1.0.0",
+        "integrity": "sha256-1uxHC9qMDvw5mJ6Rz+rmAth+Q79De1i7NyvgK1k2KPI="
+      },
+      {
+        "name": "feature-decision-analysis",
+        "previousVersion": "1.2.6",
+        "version": "1.0.0",
+        "integrity": "sha256-Zaecp5+zyrc5Z2W43yP40S3KqK97nAz0ZDy0bYHIa2U="
+      },
+      {
+        "name": "feature-decomposition",
+        "previousVersion": "1.1.6",
+        "version": "1.0.0",
+        "integrity": "sha256-Y/6nlo/Yhfd5g2wNY5Lm7Skyov9JJjY2h8RIIiXgmvw="
+      },
+      {
+        "name": "feature-discovery",
+        "previousVersion": "1.1.6",
+        "version": "1.0.0",
+        "integrity": "sha256-BhssjKYyOMEoJkMY/rU0Ueof8FTiv8dTFiN+aDAEqr0="
+      },
+      {
+        "name": "feature-engineering",
+        "previousVersion": "1.2.1",
+        "version": "1.0.0",
+        "integrity": "sha256-DvDQSQhIBhQW5PMbEfMvBEaylAijHKqtytjHp8Xe9Tk="
+      },
+      {
+        "name": "feature-execution",
+        "previousVersion": "1.1.6",
+        "version": "1.0.0",
+        "integrity": "sha256-Ryi1yvgD3O4FLYbpzvZu/wIyhCY+UpOHBcyoLMaqvmM="
+      },
+      {
+        "name": "feature-feasibility-experiment",
+        "previousVersion": "1.0.6",
+        "version": "1.0.0",
+        "integrity": "sha256-XF9uKMxgFBJMaaG/2Mux78QCDo14ezHvObTfhVH41e4="
+      },
+      {
+        "name": "feature-implementation-plan",
+        "previousVersion": "1.1.7",
+        "version": "1.0.0",
+        "integrity": "sha256-yv4LR1JXV25OcVPi6pIvH8xV5L7pH90sJZWmzw/YKJI="
+      },
+      {
+        "name": "feature-progress-tracking",
+        "previousVersion": "1.2.6",
+        "version": "1.0.0",
+        "integrity": "sha256-NlWTl2RZg/F5YfcOcvbLI88w59FPxmsDACfQ/YthEHE="
+      },
+      {
+        "name": "feature-readiness-review",
+        "previousVersion": "1.3.1",
+        "version": "1.0.0",
+        "integrity": "sha256-BJt4zEyiXnc9xO+nxhVEoq6rrAJ0JjQJOJlrl0M6JgA="
+      },
+      {
+        "name": "feature-requirement-clarification",
+        "previousVersion": "1.1.6",
+        "version": "1.0.0",
+        "integrity": "sha256-rwhUZb7Iz6YLw/rqL5pN9sfHzy8bpQCXxxQf38E9MPw="
+      },
+      {
+        "name": "feature-risk-analysis",
+        "previousVersion": "1.2.6",
+        "version": "1.0.0",
+        "integrity": "sha256-ChF0dNsuyKU0Cjs0g+9Hp3MLJ0xn/hwSTMBt7TlSIKU="
+      },
+      {
+        "name": "feature-scope-analysis",
+        "previousVersion": "1.1.6",
+        "version": "1.0.0",
+        "integrity": "sha256-u6yV+MMl+3bCB/1e3JlSod2SBEWX/vaSxzTgkycl+CI="
+      },
+      {
+        "name": "feature-solution-analysis",
+        "previousVersion": "1.2.1",
+        "version": "1.0.0",
+        "integrity": "sha256-gkU0VwE9z1+52Gg1INRdwzpNwqb1Bvgc3+2iZyNHBOs="
+      },
+      {
+        "name": "layering-and-boundaries",
+        "previousVersion": "1.2.6",
+        "version": "1.0.0",
+        "integrity": "sha256-Le98G4OLmUIoMbaeec2KXr0osQdyItSLrTGRaFysXkg="
+      },
+      {
+        "name": "quality-gates",
+        "previousVersion": "1.0.8",
+        "version": "1.0.0",
+        "integrity": "sha256-0d4ocd3I5ayXZr2s4P2FLixd8sjAy9X25/xtE24m9sk="
+      },
+      {
+        "name": "requirements-and-acceptance",
+        "previousVersion": "1.1.7",
+        "version": "1.0.0",
+        "integrity": "sha256-cvgJschbOZGitlEMiwMOV+1Sc3lnc24H2F7XIvd2IhE="
+      },
+      {
+        "name": "rpc-and-api-contracts",
+        "previousVersion": "1.1.5",
+        "version": "1.0.0",
+        "integrity": "sha256-ZpCweLz7OU6rLSkxC9s3h4kLj2l1Bn3LkvUTvKC7vWk="
+      },
+      {
+        "name": "schema-evolution-and-compatibility",
+        "previousVersion": "1.2.7",
+        "version": "1.0.0",
+        "integrity": "sha256-M5c5pV5+0GFApzpCk1+qxh19ukD7JIrEP3BljFHeOuU="
+      },
+      {
+        "name": "technical-debt-decisions",
+        "previousVersion": "1.1.6",
+        "version": "1.0.0",
+        "integrity": "sha256-qgrk5YdidM86Yjqe5ZviomWJqxoMqBUb+vE94tNVbEA="
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+Actor ID: /root/catalog_engineering_gaps
+Exercise: resumption-and-estimation
+Execution mode: reused-actor regression with prior authorship/context; not a fresh or blind comparison. The actor previously authored implementation-plan and readiness changes in the shared workspace. This history was retained and is a limitation of the exercise.
+
+Snapshot root:
+C:/Users/robso/AppData/Local/Temp/senior-skills-ba-depth-qLuhUW/evaluation-snapshot
+
+Files actually read for this exercise, relative to that snapshot root:
+1. inputs/resumption-and-estimation.md
+2. skills/feature-engineering/SKILL.md
+3. skills/feature-solution-analysis/SKILL.md
+4. skills/feature-decomposition/SKILL.md
+5. skills/feature-implementation-plan/SKILL.md
+6. skills/feature-readiness-review/SKILL.md
+7. skills/feature-engineering/references/hcm-analysis-route.md
+8. skills/feature-engineering/references/hcm-pilot-and-handoff.md
+9. skills/feature-solution-analysis/references/integration-estimation.md
+10. skills/feature-engineering/references/artefact-contract.md
+11. skills/feature-engineering/references/depth-and-phases.md
+12. skills/feature-engineering/references/dossier-layout.md
+13. skills/feature-solution-analysis/references/hcm-integration-options.md
+14. skills/feature-implementation-plan/references/hcm-transition-and-support.md
+15. skills/feature-readiness-review/references/hcm-readiness.md
+16. skills/feature-implementation-plan/references/plan-template.md
+17. skills/feature-readiness-review/references/readiness-checklist.md
+
+Actual tools/actions:
+- functions.exec orchestrated read-only tools.exec_command calls using PowerShell Get-Content for the 17 files listed above.
+- functions.exec called tools.apply_patch to save the handoff output and this separate trace in the two assigned output paths.
+- No rubric.md, snapshot.json, prior evaluation results, other exercise outputs or raw customer attachments were read for this exercise.
+- No browsing, network/client calls, provider communication, environment changes, package installation, repository tests or skill edits occurred during this exercise.
+- No additional agents were spawned for the actor response.
+
+Limitations:
+- The task and all business roles, dates, numbers and contracts are synthetic inputs.
+- BR3, CT2, CT3, M2, export configuration and earlier verification cases were described by the input rather than supplied as complete source artifacts. The output does not claim inspection of their actual contents beyond the supplied description.
+- The effective-date field's exact name, format, semantics and export coverage were not available for direct verification. No endpoint, field mapping, provider guarantee or missing estimate was invented.
+- The 9–16 person-hour envelope is arithmetic using the three supplied CT2 ranges and the supplied all-contributor/non-overlap conditions. It is not an executed measurement, CT3 estimate or calendar commitment.
+- The readiness conclusions concern the fictional task and distinguish the prepared analysis from dependent implementation/activation. They are not a grade of the skill or evidence of actual customer acceptance.
+- No capability experiment, rehearsal, provider response, deployment or business reconciliation ran; future procedures and role requests remain planned.
+
+Files written:
+C:/git/senior-skills/docs/evaluations/hcm-depth/outputs/resumption-and-estimation.txt
+C:/git/senior-skills/docs/evaluations/hcm-depth/outputs/resumption-and-estimation-trace.txt

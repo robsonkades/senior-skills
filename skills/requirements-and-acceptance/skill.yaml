@@ -1,0 +1,61 @@
+schemaVersion: 1
+
+name: requirements-and-acceptance
+version: 1.1.0
+description: >-
+  Turning a request into something buildable and checkable before writing code:
+  separating the requirement from the implementation someone already chose,
+  finding the ambiguities that change the work, naming assumptions where they
+  can be contradicted, writing acceptance criteria that a test can be derived
+  from, and surfacing contradictions instead of resolving them silently. Use
+  before implementing a ticket whose edge cases are unstated, when a request
+  names a solution rather than a need, when "fast", "secure" or "reliable"
+  appears without a number, when two requirements cannot both hold, when business rules
+  overlap or change by effective date, when a change is rejected in review for doing the wrong thing, or when deciding
+  whether to ask or to proceed on a stated assumption. Does not cover how long
+  it will take, how to deliver the message, the test level, or the order of work
+  (clean-delivery-workflow).
+
+license: Apache-2.0
+
+authors:
+  - name: senior-skills contributors
+    url: https://github.com/robsonkades/senior-skills
+
+homepage: https://github.com/robsonkades/senior-skills/tree/main/skills/requirements-and-acceptance
+repository:
+  type: git
+  url: https://github.com/robsonkades/senior-skills
+  directory: skills/requirements-and-acceptance
+
+keywords:
+  - requirements
+  - acceptance-criteria
+  - ambiguity
+  - assumptions
+  - definition-of-done
+  - scope
+  - business-rules
+  - decision-tables
+
+files:
+  - SKILL.md
+  - skill.yaml
+  - references/
+
+dependencies: []
+
+suggests:
+  - clean-delivery-workflow
+  - code-review
+  - quality-gates
+
+capabilities:
+  - reads-source
+
+agentOverrides:
+  codex:
+    interface:
+      display_name: Requirements and Acceptance
+      short_description: Clarify, assume explicitly, define done
+      default_prompt: Use Requirements and Acceptance before implementing this.

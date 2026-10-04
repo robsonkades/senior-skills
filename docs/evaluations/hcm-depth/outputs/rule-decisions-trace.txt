@@ -1,0 +1,33 @@
+Actor ID: /root/catalog_ba_gaps
+Exercise: rule-decisions
+Mode: reused-actor regression; prior conversation and implementation context were inherited. This was not a fresh or blind comparison.
+Frozen snapshot root: C:/Users/robso/AppData/Local/Temp/senior-skills-ba-depth-qLuhUW/evaluation-snapshot
+
+Files read in this exercise, relative to the frozen snapshot root:
+1. inputs/rule-decisions.md
+2. skills/collaborative-feature-definition/SKILL.md
+3. skills/requirements-and-acceptance/SKILL.md
+4. skills/collaborative-feature-definition/references/hcm-business-discovery.md
+5. skills/collaborative-feature-definition/references/product-feature.md
+6. skills/requirements-and-acceptance/references/business-rule-decisions.md
+7. skills/requirements-and-acceptance/references/acceptance-criteria.md
+8. skills/requirements-and-acceptance/references/ambiguity-checklist.md
+9. skills/feature-discovery/SKILL.md
+10. skills/feature-requirement-clarification/SKILL.md
+
+Actual tool use:
+- functions.exec orchestrated three batches of tools.exec_command calls using PowerShell Get-Content against the paths above.
+- The second batch's combined output was truncated. Business-rule-decisions.md and acceptance-criteria.md were reread fully in the third batch. Some other material in that second combined output was partially visible; no claim of complete inspection of the truncated display is made.
+- tools.apply_patch, invoked through functions.exec, created only the two assigned output files.
+
+Output paths:
+C:/git/senior-skills/docs/evaluations/hcm-depth/outputs/rule-decisions.txt
+C:/git/senior-skills/docs/evaluations/hcm-depth/outputs/rule-decisions-trace.txt
+
+Limits and scope:
+- No rubric.md, snapshot.json, evaluation results or other actors' outputs were read during this exercise.
+- No skill files were edited during this exercise.
+- No external sources, live provider/customer environments, personal data, messages or invitations were accessed or sent.
+- The draft uses only the fictional business-policy input for company-specific claims. Skill examples are not adopted as Company V policy.
+- The decision cases and acceptance trace are proposed documentary work. No owner decision, runtime test, integration execution or independent review occurred.
+- This trace reports activity and limitations; the actor did not assign a score or assess the evaluation rubric.

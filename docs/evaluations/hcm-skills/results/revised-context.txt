@@ -1,0 +1,28 @@
+# Relatório de contexto
+
+Demanda: identificar capacidade existente para obter alterações cadastrais retroativas e encaminhá-las a destino externo em até quinze minutos, sem escolher solução. Revisão da demanda não informada. Consulta documental em 03/10/2026, limitada aos insumos sintéticos de `cases/context.md`; documentos originais, código, configuração e sistemas não foram examinados. Não há conclusão sobre capacidades reais da Senior.
+
+**Conclusão:** os insumos não comprovam disponibilidade nem compatibilidade de uma capacidade com a demanda. Também não demonstram sua inexistência.
+
+**Fatos e alcance**
+
+- **F-01 — FC-r1:** informa HCM XT, Administração de Pessoal, 6.10.3. Produto, módulo e versão são declarados; execução, configuração e web services habilitados permanecem sem confirmação.
+- **F-02 — D-A:** descreve consulta de admitidos por período em Recrutamento e Seleção 6.10.4. Não estabelece captura de alterações posteriores, retroativas, nem aplicação a Administração de Pessoal 6.10.3. Revisão documental não informada.
+- **F-03 — D-B:** descreve carga inicial e sincronização entre componentes HCM. Não estabelece suporte ao destino externo solicitado, instalação no cliente ou prazo de entrega. Produto/versão específicos e revisão não informados.
+- **F-04 — A-A:** registra um colaborador retornado em demonstração. Sem revisão da interface, módulo, versão e filtros, esse caso não prova cobertura de mudanças nem equivalência com o cliente.
+- **F-05 — R-A:** registra a afirmação de habilitação automática e destino universal; é relato, sem comprovação técnica.
+
+**Candidatos e conflito**
+
+D-A é pista documental de consulta; sua adequação depende de contrato aplicável ao módulo/versão e à semântica de mudanças. D-B é pista de fluxo existente; reutilização exigiria confirmar alcance, configuração e contrato de saída externa. Nenhum está validado para reutilização.
+
+R-A extrapola D-A e D-B. Os documentos têm alcance restrito; seu silêncio não refuta uma capacidade adicional. Contrato aplicável, configuração sanitizada e ensaio representativo distinguiriam as alegações. A-A não resolve esse conflito. Não se adota hipótese como premissa confirmada.
+
+**Pendências, em ordem de impacto**
+
+1. **U-01 — Semântica e interface:** responsável funcional e responsável HCM devem delimitar campos, população, histórico e correções tardias, distinguindo data efetiva da data de registro. Obter contrato/documentação aplicável que estabeleça como localizar essas mudanças, chaves, filtros, paginação e limites. Isso determina se algum candidato cobre a operação necessária.
+2. **U-02 — Ambiente:** administrador HCM deve fornecer evidência sanitizada da versão/build, configuração, interfaces e integrador habilitados, respectivas revisões e condições de acesso. F-01 responde somente ao contexto informado.
+3. **U-03 — Destino e prazo:** responsável pelo destino deve fornecer contrato de recepção, confirmação e falhas. Analista/negócio devem definir marco inicial dos quinze minutos e resultado final esperado: recebimento ou processamento concluído.
+4. **U-04 — Comportamento:** após esclarecer contratos, responsáveis pelas interfaces devem apresentar ensaio controlado documentado de correção retroativa, incluindo tempos, confirmação, falhas e recuperação. Validar cobertura e prazo sob volume representativo.
+
+Permanecem abertas a disponibilidade efetiva e a viabilidade ponta a ponta; configurar, reutilizar ou desenvolver exige análise posterior.

@@ -1,0 +1,56 @@
+schemaVersion: 1
+
+name: architecture-decision-making
+version: 1.0.0
+description: >-
+  Write, review, reconstruct or supersede architecture decision records when
+  rationale is missing, a decision is repeatedly reopened, a proposal needs an
+  explicit outcome, or an accepted choice changes. Decide how much record is
+  warranted; preserve evidence, alternatives, consequences, decision authority
+  and revisit conditions. Covers ADR scope, lifecycle and traceability; option
+  comparison belongs to architecture-trade-off-analysis, quality drivers must be
+  observable inputs, and shortcut/repayment choices belong to
+  technical-debt-decisions.
+license: Apache-2.0
+
+authors:
+  - name: senior-skills contributors
+    url: https://github.com/robsonkades/senior-skills
+
+homepage: https://github.com/robsonkades/senior-skills/tree/main/skills/architecture-decision-making
+repository:
+  type: git
+  url: https://github.com/robsonkades/senior-skills
+  directory: skills/architecture-decision-making
+
+keywords:
+  - architecture
+  - decision-making
+  - adr
+  - decision-record
+  - reversibility
+  - supersession
+
+files:
+  - SKILL.md
+  - skill.yaml
+  - references/
+
+dependencies:
+  - name: architecture-coupling-and-quanta
+    version: ^1.0.0
+
+suggests:
+  - architecture-trade-off-analysis
+  - technical-debt-decisions
+
+capabilities:
+  - reads-source
+
+agentOverrides:
+  codex:
+    interface:
+      display_name: Architecture Decision Making
+      short_description: Records that stay re-openable on evidence
+      default_prompt: Use Architecture Decision Making to write this decision down so
+        it can be re-opened.

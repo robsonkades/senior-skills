@@ -1,0 +1,49 @@
+# Caso sintético: solução e prontidão de uma integração HCM
+
+Sou o analista que mantém a especificação de integração HCM -> provedor externo ValeFlex. Preciso
+de uma recomendação para o refinamento, dos pontos que faltam no contrato e de um parecer de prontidão
+para desenvolvimento. Use até 900 palavras em português. Neste exercício, estes são todos os insumos;
+não consulte sistemas nem fontes externas. Não implemente, envie mensagens ou altere configurações.
+
+Definição de negócio BD-r3, aceita por Lia, responsável de RH:
+
+- Primeira entrega: vínculos da unidade U1, incluindo inclusão, alteração e encerramento. Dependentes
+  e lançamentos de folha ficaram fora por decisão registrada de Lia.
+- A unidade precisa observar a confirmação final no ValeFlex em até 30 minutos após a mudança
+  elegível. Recebimento não equivale a conclusão.
+- Uma pessoa pode ter dois vínculos. A contratante acordou com o ValeFlex que cada vínculo deve
+  permanecer independente. Uma revisão futura só deve produzir efeito na sua vigência.
+- Correções retroativas são relevantes. Repetições não podem gerar um segundo efeito indevido.
+- A primeira carga deve coexistir com as mudanças seguintes sem perder alterações ocorridas
+  durante sua execução. O operador precisa acompanhar pendências e retomar o que falhou.
+
+Relatório técnico RT-r2, elaborado por Rui, engenheiro responsável distinto da autora de BD-r3:
+
+- A origem é HCM XT; o módulo e build do cliente ainda aguardam confirmação.
+- Um documento aplicável ao exportador em uso, exportador-r1, descreve geração noturna de arquivo
+  com retrato dos vínculos. A configuração fornecida confirma a janela noturna nesse ambiente.
+- Existe uma proposta de consultar alterações a cada cinco minutos. Sua existência na interface
+  do módulo do cliente, filtros, paginação e tratamento de alterações retroativas não foram verificados.
+- Um integrante sugeriu eventos nativos do HCM. Nenhum contrato de eventos foi localizado nos insumos.
+
+Contrato da contraparte VF-r4, fornecido para a análise:
+
+- Recebe lotes com itens identificados por cliente e vínculo, responde com protocolo de recebimento
+  e disponibiliza consulta posterior do lote com resultados individuais.
+- Um ensaio autorizado em homologação enviou dois itens: um confirmou e o outro foi rejeitado por
+  código de unidade desconhecido. É a única execução relatada.
+- O contrato não informa prazo máximo de processamento, prazo de consulta dos protocolos nem
+  garantia de deduplicação. Não oferece, nos documentos disponíveis, uma consulta por chave do envio
+  quando a resposta contendo o protocolo se perde.
+- O fornecedor informou que aceitará discutir essas lacunas, mas ainda não houve complemento do contrato.
+
+Rascunho PL-r1 preparado para discussão, ainda não aprovado por Rui:
+
+- Consultar a origem a cada cinco minutos; usar cliente+CPF como chave única.
+- Em timeout, reenviar todo o lote até obter resposta. Marcar o protocolo de recebimento como sucesso.
+- Usar a ordem de chegada das mensagens para substituir o registro no destino.
+- Começar a carga inicial e depois habilitar a consulta incremental; o corte não está definido.
+- Declarar a integração homologada porque o build de um adaptador está verde.
+
+Produza a análise solicitada com base nas revisões informadas, incluindo o trabalho independente que
+pode avançar enquanto as pendências são resolvidas. As decisões de negócio acima já estão aceitas.

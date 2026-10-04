@@ -1,0 +1,54 @@
+schemaVersion: 1
+
+name: feature-decomposition
+version: 1.1.0
+description: >-
+  Deciding whether a feature should split and, when useful, defining
+  independently valuable Product or Tech child features. During definition,
+  stays at outcomes, owners and acceptance; during engineering delivery
+  preparation, defines implementation resources with stable identifiers,
+  dependencies and validation. Use when several outcomes are bundled together, a
+  small change is being over-split, dependencies or shared work need a
+  breakdown, or progress lacks meaningful units. Does not approve scope or
+  acceptance, write the implementation plan (feature-implementation-plan), track
+  delivery statuses (feature-progress-tracking), or estimate effort.
+license: Apache-2.0
+
+authors:
+  - name: senior-skills contributors
+    url: https://github.com/robsonkades/senior-skills
+
+homepage: https://github.com/robsonkades/senior-skills/tree/main/skills/feature-decomposition
+repository:
+  type: git
+  url: https://github.com/robsonkades/senior-skills
+  directory: skills/feature-decomposition
+
+keywords:
+  - feature
+  - decomposition
+  - stories
+  - resources
+  - breakdown
+
+files:
+  - SKILL.md
+  - skill.yaml
+  - references/
+
+dependencies: []
+
+suggests:
+  - collaborative-feature-definition
+  - feature-engineering
+  - feature-implementation-plan
+  - feature-progress-tracking
+  - feature-solution-analysis
+
+agentOverrides:
+  codex:
+    interface:
+      display_name: Feature Decomposition
+      short_description: Split only when the split buys something
+      default_prompt: Use Feature Decomposition to decide whether to split this
+        feature, and into what.

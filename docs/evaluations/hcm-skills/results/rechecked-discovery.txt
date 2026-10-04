@@ -1,0 +1,32 @@
+**Acesso físico conforme vínculos e vigência — BD-r0, 03/10/2026.** Product Feature em descoberta; definição inicial, sem aceite. Autor: analista de negócios. Lia valida somente as regras sob sua responsabilidade; autoridade sobre o conjunto: OPEN. Profundidade Deep: integração externa e acesso físico entre domínios distintos.
+
+**Base disponível:** F-01, ata: RH cadastra admissões no HCM e envia planilha ao time Predial, que controla acesso por pessoa. F-02, relato de Lia: uma pessoa pode ter vínculos simultâneos em unidades diferentes. F-03, patrocinador: deseja atualização “na hora”. Não foram fornecidas medições de atrasos, erros ou retrabalho. São relatos fornecidos, sem observação dos sistemas.
+
+**OBJ-01:** permitir que as pessoas tenham os acessos justificados na vigência autorizada, preservando os justificados por outros vínculos. Beneficiários: pessoas admitidas, RH e equipe Predial. O benefício esperado é disponibilidade correta do acesso; sua frequência atual e melhora permanecem sem medição.
+
+**Processo desejado, proposto:** RH registra admissão → preparação antecipada → liberação na vigência autorizada → confirmação do resultado ao responsável, ainda a definir. O cadastro antecipado não equivale à autorização de entrada. Ao encerrar um vínculo, considerar os demais antes de alterar o acesso da pessoa.
+
+**SC-01:** proposta inicial abrange admissões futuras e preservação de acessos com múltiplos vínculos; população/unidades: OPEN. Outros movimentos permanecem por delimitar, sem exclusão presumida. SC-02: esta tarefa termina no rascunho; não inclui execução nem implementação. Sem decomposição: há um resultado comum, ainda em definição.
+
+**Regras e aceite proposto**, derivados de Lia/ata:
+
+- BR-01 → BAC-01: pessoa com vínculos A e B em unidades distintas; encerrado A, permanece o acesso justificado por B. Não significa manter todos os acessos de A.
+- BR-02 → BAC-02: preparada a admissão antes da data autorizada D, essa preparação não permite entrada antes de D.
+- BR-02 → BAC-03: chegando a vigência autorizada, o acesso justificado fica disponível; instante e tolerância permanecem OPEN.
+
+OBJ-01 ↔ BAC-01/02/03 ↔ SC-01. Verificação planejada: cenários fictícios revisados com Lia e, posteriormente, demonstração no Predial; BAC-03 ainda depende de precisão temporal. Nenhum teste executado.
+
+**Pendências de alto impacto:**
+
+- U-01: população, fato que autoriza preparação, horário/fuso da vigência e acessos exclusivos do vínculo encerrado; mudam escopo e aceite. Lia responde dentro de sua competência; demais autoridades: OPEN.
+- U-02: “na hora” pode significar recebimento ou efeito confirmado; prazo, marco de medição e reação ao atraso estão indefinidos. Patrocinador deve explicitar a necessidade; responsável pelo aceite: OPEN.
+- U-03: geração/módulo/versão do HCM, interfaces e responsável técnico Predial desconhecidos. “API de tudo” e CPF são sugestões sem evidência, não premissas. CPF não distingue vínculos; identificação/correlação exigem verificação técnica.
+- U-04: falha parcial, divergência de identidade, cancelamento e correção de datas: tratamento e responsáveis OPEN. RISK-01: entrada antecipada; RISK-02: retirada indevida; RISK-03: conclusão aparente; BR/BAC cobrem os dois primeiros, U-02/04 impedem fechar o fluxo.
+
+**Próxima reunião — resultado mínimo e conclusão:**
+
+1. Q-01, Lia: qual menor recorte de admissões/unidades já entrega valor? Desafia excesso de escopo; resposta delimita SC-01.
+2. Q-02, Lia: qual fato confirmado autoriza preparar o acesso? Solicitação versus autorização altera o início do processo, sem mudar BR-02.
+3. Q-03, patrocinador: qual resultado observável precisa estar confirmado “na hora”? Recebimento versus acesso efetivo muda U-02 e o aceite; depois será possível fixar prazo.
+
+**Checkpoint: continuar.** Revisão documental contemplou admissão futura e encerramento de um vínculo; persistem lacunas. Engenharia necessária, não iniciada; arquiteto/engenheiro distinto: OPEN, com identificação dos produtos e interfaces como próxima evidência. Não houve decisão tecnológica, aprovação, GAP aceito ou validação independente. Nenhum artefato posterior invalidado.

@@ -1,0 +1,88 @@
+# First integration meeting: service-agreement signatures
+
+**Status:** Meeting prepared; Product Feature draft MP-01. Attendance and authority are unconfirmed. **Depth:** Deep, because this is a new external integration with several interface owners. Scope here is preparation only.
+
+**Source:** [request.md](request.md), synthetic “HCM Integration Checklist” transcription and platform note. Cell references identify the extract, not an opened XLSX. O2–Q2 (`asdf; asdf; test`) supplies no usable requirement; row 3 describes the demand. No provider attachment was supplied.
+
+## Briefing
+
+**OBJ-01:** Enable electronic signing and storage of eligible service agreements, reducing sales staff's print/sign/scan/file work (O3, P3). The manual-effort benefit is expected, not measured.
+
+The domain is sales/document signing, irrespective of the HCM title. The requested flow replaces manual handling with **sales system → Connect → signing application → document repository**, triggered after a completed sale generates its PDF, on demand per eligible sale (U3, AF3, V3, AB3). Request type is **new integration** (M3); the trigger does not establish an API or event mechanism.
+
+The supplied business rules are:
+
+- **BR-01:** Only service agreements qualify; any further eligibility conditions remain open (Y3–Z3).
+- **BR-02:** Checkout must not await signature, and integration failures must allow the sale to continue (P3, AA3).
+- **BR-03:** Resubmission must avoid duplicate signature requests (Y3–Z3).
+- **BR-04:** Failures must be logged and resubmission possible; authorized operators and recovery behavior are unspecified (AA3).
+
+These are supplied requirements, not verified runtime behavior. **2,400 documents/month** is an average, not peak load or PDF size (AC3). AL3 says no additional questionnaire; refine this record.
+
+**Success needs clarification:** Q3's HTTP 200 can mean receipt under the supplied asynchronous Connect note; it proves neither downstream signing nor storage. Downstream contracts are absent. **Base64 is encoding, not encryption**; AK3 does not establish protection requirements.
+
+## Proposed 45-minute agenda
+
+| Time | Focus | Reviewable result sought |
+| --- | --- | --- |
+| 5 min | Confirm outcome, scope and business decision authority | Agreed meaning of completion, or a named open decision |
+| 15 min | Walk one eligible completed sale and one failed filing/resubmission case | Business steps, identities, exception ownership and observable states |
+| 10 min | Review the initial map and missing contracts | Corrected meanings and evidence requests to interface owners |
+| 10 min | Examine Connect coverage/reuse evidence and constraints | Supported capability versus unresolved work; deadline and capacity gaps |
+| 5 min | Read back conclusions and open items | Proposed next revision, accountable roles and dates only if agreed |
+
+Expected participants: **customer process owner** for outcome/rules and business authority; **sales-system provider** for source data/trigger; **Senior integration specialist** for supported capabilities and reusable artifacts. Confirm authority separately from attendance. Signing/repository interface owners and accountable operations/security roles remain unidentified; the expected attendees may not represent them.
+
+## Focused questions for the meeting
+
+Start with Q-01–02 on the outcome; select Q-03–04 as the walkthrough warrants. No question has yet been asked or answered.
+
+| ID / proposed respondent | Question | Why it matters; consequence and recommendation |
+| --- | --- | --- |
+| **Q-01 / process owner** | Would HTTP 200 still mean success if the signed agreement never reached the repository? | Challenges false completion. Recommend verifying the signed document against the correct agreement; receipt alone leaves the storage outcome unverified. |
+| **Q-02 / process owner** | What delay after PDF generation is acceptable before the request becomes available to the signer? | Immediate availability and a longer window impose different obligations. Keep the threshold open and separate from human signing time. |
+| **Q-03 / process owner, sales provider** | When does a corrected PDF count as a new signing request instead of the same request resubmitted? | Prevent duplicates without suppressing legitimate revisions. Bring one unchanged retry and one correction example; no key is yet chosen. |
+| **Q-04 / process owner, interface owners** | If signing succeeds but repository filing fails, should recovery resume filing the signed document? | Recommend resuming filing without another signature request, subject to agreement and interface evidence; restarting could violate BR-03. |
+
+These consequential gaps do not block preparation; they block dependent acceptance/timing/recovery commitments. Locate responsibility for unsigned, declined and failed requests during the walkthrough; reminder and cancellation behavior remains unspecified.
+
+## Initial business-data map
+
+Field paths, API types, requiredness and validation rules are **OPEN** for all rows (X3). Respondents are proposed evidence sources, not assigned delivery owners.
+
+| Business item | Purpose and direction | Known mapping / sensitivity | Gap and proposed respondent |
+| --- | --- | --- | --- |
+| Agreement identifier | Associate request/result; sales → signing, repository association needed | W3; business identifier; transformation unknown | Namespace/stability and association: sales and destination owners |
+| Signer name | Identify signer; sales → signing | W3; personal data; transformation unknown | Meaning/representation: process owner and providers |
+| Signer email | Contact signer; sales → signing | W3; personal data; normalization unknown | Invalid/corrected-address behavior: process owner, signing provider |
+| Document filename | Label PDF; sales → signing | W3; potentially identifying metadata | Naming and destination use: interface owners |
+| PDF in Base64 | Supply agreement; sales → signing through Connect | W3; encoding supplied; potentially personal/confidential | Limits/representation: interface owners; protection: security/data owner |
+| Signed document | Retain result; signing → repository | P3 outcome; format/transformation unknown | Retrieval, association and storage confirmation: destination owners |
+
+Keep **sale, agreement, document/version, signer and request/correlation identities distinct**. Their relationships and a duplicate-prevention key are unknown; filename and name/email are not proven stable identifiers. These are gaps, not additional required fields (W3, X3, Y3–Z3).
+
+## Evidence and open decisions
+
+| Open item | Consequence | Proposed evidence source / next check |
+| --- | --- | --- |
+| **U-01: “standard integration”** (AI3) | Coverage/custom work unverified | Senior specialist: show an applicable versioned connector/flow and compare supported behavior with BR-01–04 and signed storage. Standard capability, configuration, reuse and custom work remain unverified candidates. |
+| **U-02: documentation** (AG3, X3) | Fields/completion/recovery unknown | Locate the claimed specification, identify its interface coverage and obtain missing signing/repository contracts; “yes” is not reviewed evidence. |
+| **U-03: “ready for use by 16/10”** (AH3) | Deadline cannot be committed | Process owner: confirm year and readiness milestone. No feasibility or delivery promise is established. |
+| **U-04: capacity/protection** (AC3, AK3) | Capability and obligations unknown | Sales provider: peaks and PDF sizes. Security/data owner: transport/access/storage requirements. Interface owners: supporting evidence. |
+| **U-05: recovery authority** (AA3) | Failures may remain unresolved | Establish who notices failures and may resubmit; review one exception. |
+
+## Proposed business checks for later refinement
+
+All checks are **unverified proposals**; no tests or demonstrations have run.
+
+| ID / trace | Observable result | Planned verification |
+| --- | --- | --- |
+| **BAC-01 / OBJ-01, BR-01** | Eligible PDFs reach intended signers; non-service agreements do not trigger signing | Demonstrate eligible/ineligible examples; timing from Q-02 |
+| **BAC-02 / OBJ-01** | Signed document is stored and retrievable against the correct agreement | Retrieve sample; verify identity/content beyond HTTP 200 |
+| **BAC-03 / BR-02** | Checkout proceeds during pending signature or integration failure | Demonstrate both cases |
+| **BAC-04 / BR-03** | Same-request resubmission creates no duplicate signature request | Replay after an uncertain response; definition from Q-03 |
+| **BAC-05 / BR-04** | Failure is recorded and resubmittable by the agreed role | Demonstrate discovery/recovery, including Q-04 |
+
+To assess the separate manual-effort benefit, propose comparing eligible agreements needing printing/scanning before and after adoption. The process owner's baseline, target and review window remain open.
+
+**Disposition:** Meeting preparation is complete; discovery continues at the meeting. No participant decisions, approvals, accepted gaps or commitments are recorded. Proposed next artifact: MP-02 updating this brief/map/decision log, with owner and review date to agree. Engineering analysis is required for the integration; its architect/senior-engineer owner remains unidentified, separate from the product author. Business acceptance, engineering analysis and independent readiness validation have not occurred. No messages or invitations were sent.

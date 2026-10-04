@@ -1,0 +1,33 @@
+{
+  "name": "@senior-skills/node",
+  "version": "1.0.0",
+  "description": "Node.js implementations of the senior-skills infrastructure ports",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robsonkades/senior-skills.git",
+    "directory": "packages/node"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@senior-skills/core": "1.0.0",
+    "tar": "^7.4.3"
+  }
+}

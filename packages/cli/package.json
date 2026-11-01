@@ -1,6 +1,6 @@
 {
   "name": "@senior-skills/cli",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Install, update and publish AI coding-agent skills across Claude Code, Codex and future agents",
   "keywords": [
     "senior-skills",
@@ -41,12 +41,12 @@
     "access": "public"
   },
   "dependencies": {
-    "@senior-skills/adapter-claude": "1.0.0",
-    "@senior-skills/adapter-codex": "1.0.0",
-    "@senior-skills/core": "1.0.0",
-    "@senior-skills/installer": "1.0.0",
-    "@senior-skills/node": "1.0.0",
-    "@senior-skills/registry": "1.0.0",
+    "@senior-skills/adapter-claude": "1.1.1",
+    "@senior-skills/adapter-codex": "1.1.1",
+    "@senior-skills/core": "1.1.1",
+    "@senior-skills/installer": "1.1.1",
+    "@senior-skills/node": "1.1.1",
+    "@senior-skills/registry": "1.1.1",
     "commander": "^15.0.0",
     "picocolors": "^1.1.1"
   }

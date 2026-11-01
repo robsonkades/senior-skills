@@ -1,6 +1,6 @@
 {
   "name": "@senior-skills/node",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Node.js implementations of the senior-skills infrastructure ports",
   "license": "Apache-2.0",
   "repository": {
@@ -27,7 +27,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@senior-skills/core": "1.0.0",
+    "@senior-skills/core": "1.1.1",
     "tar": "^7.4.3"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@senior-skills/adapter-claude",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Claude Code agent adapter for senior-skills",
   "license": "Apache-2.0",
   "repository": {
@@ -27,6 +27,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@senior-skills/core": "1.0.0"
+    "@senior-skills/core": "1.1.1"
   }
 }

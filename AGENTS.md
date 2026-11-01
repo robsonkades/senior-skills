@@ -2,8 +2,9 @@
 
 ## Project
 
-`senior-skills` maintains a focused catalog of 32 skills: 17 feature skills and their 15 direct
-supporting skills. The approved set is listed in `scripts/feature-catalog.test.mjs`.
+`senior-skills` maintains 33 approved skills: 17 feature skills, their 15 direct
+supporting skills and the independent `senior-hcm-specialist` documentation skill.
+The approved set is listed in `scripts/feature-catalog.test.mjs`.
 All dependencies, optional dependencies and suggestions must stay within that set. Keep the
 instructions usable without handoffs to removed catalogs. Expanding the catalog requires an
 explicit scope decision; transitive links are not a reason to restore removed skill groups.

@@ -43,6 +43,7 @@ const supportingSkills = [
   'schema-evolution-and-compatibility',
   'technical-debt-decisions',
 ];
+const domainSkills = ['senior-hcm-specialist'];
 const manifests = new Map(
   readdirSync(join(repoRoot, 'skills'), { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
@@ -52,9 +53,12 @@ const manifests = new Map(
     }),
 );
 
-test('the catalog stays within the 17 feature skills and 15 approved supporting skills', () => {
-  assert.deepEqual([...manifests.keys()].sort(), [...featureSkills, ...supportingSkills].sort());
-  const required = new Set(featureSkills);
+test('the catalog contains exactly the approved feature, supporting and domain skills', () => {
+  assert.deepEqual(
+    [...manifests.keys()].sort(),
+    [...featureSkills, ...supportingSkills, ...domainSkills].sort(),
+  );
+  const required = new Set([...featureSkills, ...domainSkills]);
   for (const name of required) {
     const manifest = manifests.get(name);
     assert.ok(manifest, `Missing required skill: ${name}`);

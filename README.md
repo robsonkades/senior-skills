@@ -1,10 +1,11 @@
 # senior-skills
 
-Feature engineering skills and their dependencies, with a CLI for Claude Code and Codex.
+Feature engineering and Senior HCM documentation skills, with a CLI for Claude Code and Codex.
 
-The catalog contains exactly 32 skills: 17 feature skills and 15 supporting skills. Their
-dependencies and suggestions stay within this set; installing a feature does not pull in a
-separate Java, performance or operations catalog.
+The catalog contains 33 skills: 17 feature skills, 15 supporting skills and the independent
+`senior-hcm-specialist`. Dependencies and suggestions stay within this set; installing a feature
+does not pull in the documentation specialist or a separate Java, performance or operations
+catalog.
 
 Start with `collaborative-feature-definition` to define a feature, or `feature-engineering` to
 prepare, execute and review an agreed feature. The remaining feature skills cover discovery,
@@ -15,6 +16,10 @@ For business analysts working with Senior HCM integrations, see the
 [HCM business analysis guide](docs/hcm-business-analysis.md). It maps customer discovery, product
 context, solution choices, contracts and readiness to the existing catalog, with English working
 models. New and substantially updated skills follow the [eight quality pillars](docs/skill-quality-pillars.md).
+
+For functional and technical HCM questions, use
+[senior-hcm-specialist](skills/senior-hcm-specialist/SKILL.md). It researches the official
+documentation across HCM modules, reads the relevant sources and cites the evidence for its answers.
 
 ## Run from source
 

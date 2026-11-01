@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { execFile, spawn } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import {
   mkdtemp,
   mkdir,
@@ -242,7 +243,7 @@ after(async () => {
 });
 
 describe('feature catalog', () => {
-  it('installs exactly the 32 approved skills, including requested suggestions', async () => {
+  it('installs the 32 feature and supporting skills without independent domain skills', async () => {
     const catalogHome = join(root, 'catalog-home');
     const catalogProject = join(root, 'catalog-project');
     await mkdir(catalogProject, { recursive: true });
@@ -275,6 +276,7 @@ describe('feature catalog', () => {
         directories.filter((entry) => entry.isDirectory() && !entry.name.startsWith('.')).length,
         32,
       );
+      assert.ok(!directories.some((entry) => entry.name === 'senior-hcm-specialist'));
       for (const name of [
         'collaborative-feature-definition',
         'feature-engineering',
@@ -295,6 +297,99 @@ describe('feature catalog', () => {
       await readFile(join(catalogProject, 'skills.lock'), 'utf8'),
       /generatedWith:.*@senior-skills\/cli@/,
     );
+  });
+});
+
+describe('domain catalog', () => {
+  it('finds, describes and installs the HCM specialist by registry name', async () => {
+    const catalogHome = join(root, 'domain-catalog-home');
+    const catalogProject = join(root, 'domain-catalog-project');
+    await mkdir(catalogProject, { recursive: true });
+    const options = { home: catalogHome, cwd: catalogProject };
+    const removed = await cli(['registry', 'remove', 'official'], options);
+    assert.equal(removed.code, 0, removed.stderr);
+    const added = await cli(['registry', 'add', 'catalog', repoRoot, '--kind', 'local'], options);
+    assert.equal(added.code, 0, added.stderr);
+
+    const name = 'senior-hcm-specialist';
+    const search = await cli(['search', name, '--registry', 'catalog', '--json'], options);
+    assert.equal(search.code, 0, search.stderr);
+    const matches = JSON.parse(search.stdout) as {
+      name: string;
+      latest: string;
+      registry: string;
+    }[];
+    const match = matches.find((entry) => entry.name === name);
+    assert.ok(match, 'The HCM specialist must be discoverable in the catalog');
+    assert.equal(match.registry, 'catalog');
+
+    const info = await cli(['info', name, '--registry', 'catalog', '--json'], options);
+    assert.equal(info.code, 0, info.stderr);
+    const metadata = JSON.parse(info.stdout) as {
+      name: string;
+      manifest: { name: string; version: string };
+    };
+    assert.equal(metadata.name, name);
+    assert.equal(metadata.manifest.name, name);
+    assert.equal(metadata.manifest.version, match.latest);
+
+    const result = await cli(
+      [
+        'install',
+        name,
+        '--registry',
+        'catalog',
+        '--agent',
+        'all',
+        '--project',
+        '--project-root',
+        catalogProject,
+        '--json',
+      ],
+      options,
+    );
+    assert.equal(result.code, 0, result.stderr);
+    const report = JSON.parse(result.stdout) as {
+      resolved: { name: string; direct: boolean }[];
+      installed: { name: string; version: string; agent: string }[];
+    };
+    assert.deepEqual(
+      report.resolved.map(({ name, direct }) => ({ name, direct })),
+      [{ name, direct: true }],
+    );
+    assert.deepEqual(report.installed.map((entry) => entry.agent).sort(), ['claude-code', 'codex']);
+    for (const entry of report.installed) {
+      assert.equal(entry.name, name);
+      assert.equal(entry.version, match.latest);
+    }
+
+    for (const agentDirectory of ['.claude', '.agents']) {
+      const installedRoot = join(catalogProject, agentDirectory, 'skills');
+      const directories = await readdir(installedRoot, { withFileTypes: true });
+      assert.deepEqual(
+        directories
+          .filter((entry) => entry.isDirectory() && !entry.name.startsWith('.'))
+          .map((entry) => entry.name),
+        [name],
+      );
+      assert.match(
+        await readFile(join(installedRoot, name, 'SKILL.md'), 'utf8'),
+        /name: senior-hcm-specialist/,
+      );
+      for (const file of [
+        'references/documentation-index.jsonl',
+        'scripts/documentation-index.mjs',
+        'scripts/documentation-read.mjs',
+      ]) {
+        const source = await readFile(join(repoRoot, 'skills', name, file));
+        const installed = await readFile(join(installedRoot, name, file));
+        assert.equal(
+          createHash('sha256').update(installed).digest('hex'),
+          createHash('sha256').update(source).digest('hex'),
+          `${agentDirectory} must preserve the packaged ${file}`,
+        );
+      }
+    }
   });
 });
 

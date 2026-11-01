@@ -1,0 +1,33 @@
+schemaVersion: 1
+name: senior-hcm-specialist
+version: 1.1.1
+description: >-
+  Answer functional and technical questions across Senior Sistemas Gestao de Pessoas
+  HCM by researching official documentation and citing verified evidence. Use for
+  any documented HCM module, business process, configuration, calculation, screen,
+  rule, integration, native service or troubleshooting question. Establish product
+  and version applicability, distinguish HCM 6.10.4 from Senior X, and identify
+  evidence gaps rather than inventing an answer.
+license: Apache-2.0
+keywords:
+  - senior
+  - hcm
+  - gestao-de-pessoas
+  - webservices
+  - documentation-research
+  - functional-processes
+files:
+  - SKILL.md
+  - skill.yaml
+  - references/
+  - scripts/
+capabilities:
+  - reads-source
+agentOverrides:
+  codex:
+    interface:
+      display_name: Senior HCM Specialist
+      short_description: Research any documented HCM topic with official evidence
+      default_prompt: Use Senior HCM Specialist to investigate this question against
+        official Senior documentation, locate and read the applicable sources,
+        and answer with verified facts, product/version scope and remaining gaps.

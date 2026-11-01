@@ -641,6 +641,24 @@ skills:
       - version: 1.0.0
         path: skills/schema-evolution-and-compatibility
         integrity: sha256-M5c5pV5+0GFApzpCk1+qxh19ukD7JIrEP3BljFHeOuU=
+  - name: senior-hcm-specialist
+    description: Answer functional and technical questions across Senior Sistemas Gestao de Pessoas HCM by researching
+      official documentation and citing verified evidence. Use for any documented HCM module, business process,
+      configuration, calculation, screen, rule, integration, native service or troubleshooting question. Establish
+      product and version applicability, distinguish HCM 6.10.4 from Senior X, and identify evidence gaps rather than
+      inventing an answer.
+    keywords:
+      - senior
+      - hcm
+      - gestao-de-pessoas
+      - webservices
+      - documentation-research
+      - functional-processes
+    latest: 1.1.1
+    versions:
+      - version: 1.1.1
+        path: skills/senior-hcm-specialist
+        integrity: sha256-DAvde+gRUWIxTj5lwYPRNRMKC+CIFkDtFtbqt2hGlJs=
   - name: technical-debt-decisions
     description: "Deciding when a shortcut is a legitimate trade and when it is just damage: separating deliberate and
       inadvertent debt, constraints delivery pressure does not waive, containing a shortcut so it can be undone,

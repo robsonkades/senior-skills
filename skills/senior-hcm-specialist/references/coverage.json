@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "product": "Gestao de Pessoas | HCM",
+  "edition": "6.10.4",
+  "generatedAt": "2026-10-31T23:50:11.334Z",
+  "sources": [
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/adata/maintoc.json",
+      "fetchedAt": "2026-10-31T23:50:11.039Z",
+      "sha256": "66fd42bd8bd54f22da6b2640384441dfc612e485dc18e746ce89a53657840113"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/sitemap-index.xml",
+      "fetchedAt": "2026-10-31T23:50:11.128Z",
+      "sha256": "1e814a0f3e7e22b8010134fa66305c40d4e3490eb8b04f1f0df1f907610275f2"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/sitemap-1.xml",
+      "fetchedAt": "2026-10-31T23:50:11.195Z",
+      "sha256": "49a1612e9fbf315fcb2ee75ed40b80fcff4f4e5818dce1cdc761fd3512f2f081"
+    },
+    {
+      "url": "https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.10.4/sitemap-2.xml",
+      "fetchedAt": "2026-10-31T23:50:11.325Z",
+      "sha256": "b22d65c857a07c45fe917319e531c82d49dafa63adb0dbc8d7cda4c51e95652f"
+    }
+  ],
+  "navigationNodes": 7021,
+  "navigationLinks": 6636,
+  "sitemapEntries": 8108,
+  "interpretation": "Complete enumeration of the retrieved navigation and sitemaps; not proof of all existing vendor documents or semantic review of every page. External resources are indexed, not crawled. HTML fetching verifies availability and extracts links, not functional correctness. Binary documents are indexed, not read.",
+  "crawl": {
+    "state": "complete-with-reported-failures",
+    "attempted": 8346,
+    "htmlFetched": 8207,
+    "failed": 139,
+    "startedAt": "2026-10-31T23:50:14.027Z",
+    "concurrency": 4,
+    "delayPerWorkerMs": 100,
+    "finishedAt": "2026-11-01T00:02:21.719Z",
+    "excludedMalformedRequests": 5
+  },
+  "resources": 10068,
+  "inVersionResources": 8347,
+  "externalResources": 1721,
+  "documents": 14,
+  "unvisitedInVersionPages": 0
+}

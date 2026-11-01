@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Feature engineering skills and their dependencies, with a cross-agent CLI",
+  "description": "Feature engineering and Senior HCM documentation skills, with a cross-agent CLI",
   "license": "Apache-2.0",
   "engines": {
     "node": ">=22.18.0"
@@ -22,10 +22,10 @@
     "clean": "tsc --build --clean",
     "rebuild": "npm run clean && npm run build",
     "typecheck": "tsc --build --force",
-    "test": "npm run build && node --test \"packages/*/test/**/*.test.ts\" \"scripts/*.test.mjs\"",
-    "test:only": "node --test \"packages/*/test/**/*.test.ts\" \"scripts/*.test.mjs\"",
-    "lint": "eslint packages scripts",
-    "lint:fix": "eslint packages scripts --fix",
+    "test": "npm run build && node --test \"packages/*/test/**/*.test.ts\" \"scripts/*.test.mjs\" \"skills/*/scripts/*.test.mjs\"",
+    "test:only": "node --test \"packages/*/test/**/*.test.ts\" \"scripts/*.test.mjs\" \"skills/*/scripts/*.test.mjs\"",
+    "lint": "eslint packages scripts \"skills/*/scripts/*.mjs\"",
+    "lint:fix": "eslint packages scripts \"skills/*/scripts/*.mjs\" --fix",
     "format": "prettier --write \"**/*.{ts,js,mjs,json,md,yaml,yml}\"",
     "format:check": "prettier --check \"**/*.{ts,js,mjs,json,md,yaml,yml}\"",
     "check:boundaries": "node scripts/check-boundaries.mjs",

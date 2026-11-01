@@ -1,14 +1,17 @@
 # Using the HCM business analysis track
 
 The track supports the analyst from the first customer conversation through preparation for
-development and acceptance review. The catalog still contains 32 skills; six have HCM-specific
-references, English templates and explicit activation conditions. Compose the other specialists
-as needed, without making the analyst run every stage for every inquiry.
+development and acceptance review. It uses 32 feature/supporting skills; six have HCM-specific
+references, English templates and explicit activation conditions. The catalog also includes the
+independent `senior-hcm-specialist` for research across official HCM documentation, bringing the
+total to 33. Compose the specialists as needed, without making the analyst run every stage for
+every inquiry.
 
 For the team's returned workbook and Connect training material, see
 [checklist and Connect intake](checklist-and-connect-intake.md). It explains the first meeting,
 provider participation, preliminary mapping and the evidence needed to classify the solution.
-The [naming review](catalog-naming-review.md) explains how the 32 responsibilities fit together.
+The [naming review](catalog-naming-review.md) explains how the 32 feature/supporting
+responsibilities fit together.
 
 ## Choose an entry point
 
@@ -16,6 +19,7 @@ The [naming review](catalog-naming-review.md) explains how the 32 responsibiliti
 | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | Prepare a meeting, clarify a need or describe a process           | [collaborative-feature-definition](../skills/collaborative-feature-definition/SKILL.md) | [Interview and functional definition](../skills/collaborative-feature-definition/references/hcm-business-discovery.md) |
 | Confirm environment, product or interface, including without code | [feature-context-analysis](../skills/feature-context-analysis/SKILL.md)                 | [Context record and official sources](../skills/feature-context-analysis/references/senior-hcm-context.md)             |
+| Answer a functional or technical HCM documentation question       | [senior-hcm-specialist](../skills/senior-hcm-specialist/SKILL.md)                       | [Module map and research workflow](../skills/senior-hcm-specialist/references/documentation-navigation.md)             |
 | Compare configuration, reuse and development                      | [feature-solution-analysis](../skills/feature-solution-analysis/SKILL.md)               | [Product coverage and alternatives](../skills/feature-solution-analysis/references/hcm-integration-options.md)         |
 | Specify data and integration obligations                          | [feature-contract-definition](../skills/feature-contract-definition/SKILL.md)           | [Mapping, effective dates and recovery](../skills/feature-contract-definition/references/hcm-data-and-interactions.md) |
 | Review a specification or acceptance results                      | [feature-readiness-review](../skills/feature-readiness-review/SKILL.md)                 | [Review criteria and assessment](../skills/feature-readiness-review/references/hcm-readiness.md)                       |
@@ -86,8 +90,9 @@ revision and compare the responses supplied by Senior and the provider. Separate
 waiting and do not infer an agreed delivery date."
 
 The [depth extension review](hcm-depth-review.md) records the nine changed skills, their eight-pillar
-coverage and validation limits. The catalog still contains 32 skills; their names and boundaries
-remain appropriate for responsibilities reusable beyond HCM.
+coverage and validation limits for the existing feature/supporting skills. Their names and
+boundaries remain appropriate for responsibilities reusable beyond HCM; the documentation
+specialist is an independent catalog entry.
 
 ## Review the eight pillars
 
@@ -112,6 +117,6 @@ needed to observe usefulness and maintenance in the working context. The later
 [checklist and Connect runs](evaluations/checklist-connect/results.md) exercise first-meeting
 preparation and a configuration recommendation using the 1.0.0 initial baseline.
 
-See the [catalog assessment](hcm-catalog-assessment.md) for the role of all 32 skills, coverage
+See the [catalog assessment](hcm-catalog-assessment.md) for the role of the original 32 skills, coverage
 limitations and prioritized improvements, and the
 [implementation plan](senior-hcm-business-analysis-plan.md) for the adoption sequence.

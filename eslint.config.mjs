@@ -48,11 +48,24 @@ export default tseslint.config(
   },
   {
     // Build scripts run under Node directly, so they get the Node globals.
-    files: ['scripts/**/*.mjs', 'packages/*/bin/*.mjs'],
+    files: ['scripts/**/*.mjs', 'packages/*/bin/*.mjs', 'skills/*/scripts/*.mjs'],
     languageOptions: {
       ecmaVersion: 2023,
       sourceType: 'module',
-      globals: { console: 'readonly', process: 'readonly' },
+      globals: {
+        console: 'readonly',
+        process: 'readonly',
+        URL: 'readonly',
+        fetch: 'readonly',
+        AbortSignal: 'readonly',
+        TextDecoder: 'readonly',
+        TextEncoder: 'readonly',
+        Response: 'readonly',
+        Headers: 'readonly',
+        setTimeout: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly',
+      },
     },
     rules: { 'no-console': 'off' },
   },
